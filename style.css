@@ -48,13 +48,23 @@ body, html {
 }
 
 .resume-btn {
-  padding: 0.4rem 1rem;
+  padding: 0.5rem 1.2rem;
   border: 1px solid white;
   border-radius: 5px;
   background: transparent;
   color: white;
-  transition: 0.3s;
+  font-family: 'Kalam', cursive;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: 0.3s ease;
+  cursor: pointer;
 }
+
+.resume-btn:hover {
+  background: #f8d15d;
+  color: black;
+}
+
 
 .resume-btn:hover {
   background: #f8d15d;
@@ -148,4 +158,12 @@ p {
   .close-icon {
     display: block;
   }
+}
+/* === Hero Subtitle Font Styling === */
+.hero-subtitle {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: white;
+  font-family: 'Kalam', cursive;
+  font-weight: 400;
 }

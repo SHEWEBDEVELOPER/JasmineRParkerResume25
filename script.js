@@ -1,10 +1,10 @@
 // Typewriter Effect
 const typewriter = document.getElementById("typewriter");
 const words = [
-  "Front-End Developer",
-  "React Enthusiast",
-  "Photoshop Creative",
-  "Email Developer (SFMC + BeePro)"
+  "Front-End Web Developer",
+  "Email Production Developer",
+  "Responsive UI Designer",
+  "Creative Web Technologist"
 ];
 
 let wordIndex = 0;
