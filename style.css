@@ -5,19 +5,18 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Orbitron', sans-serif;
   color: #fff;
   background: linear-gradient(135deg, 
     #667eea 0%, 
-    #764ba2 25%, 
-    #f093fb 50%, 
+    #87CEFA 15%,  /* Baby Sky Blue added here */
+    #764ba2 35%, 
+    #f093fb 55%, 
     #f5576c 75%, 
     #4facfe 100%);
   background-size: 400% 400%;
-  animation: gradientShift 15s ease infinite;
+  animation: gradientShift 18s ease infinite;
   min-height: 100vh;
-  padding: 2rem;
-  position: relative;
   overflow-x: hidden;
 }
 
@@ -62,20 +61,27 @@ body {
 }
 
 .resume-btn {
-  background: #fff;
-  color: #333 !important;
-  padding: 0.5rem 1rem;
-  border-radius: 6px;
+  background: linear-gradient(135deg, #d9d9d9, #f4f4f4);
+  color: #333;
+  font-family: 'Kalam', cursive;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  display: inline-block;
   font-weight: 600;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  transition: background 0.3s, color 0.3s;
+  transition: all 0.3s ease;
 }
 
 .resume-btn:hover {
-  background: #f1f1f1;
+  background: linear-gradient(135deg, #f9f9f9, #e0e0e0);
   color: #000;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
 }
+
+
 .shape {
   position: absolute;
   opacity: 0.08;
