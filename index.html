@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jasmine R. Parker | Web Developer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Kalam&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
+  <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">Jasmine R. Parker</div>
     <div class="hamburger" onclick="toggleMenu()">☰</div>
@@ -17,10 +21,10 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
         <li>
-          <a href="https://docs.google.com/document/d/1PVuf2utz1oP6ZlsNJ0O4DMaFG_JYheibp_RA12ee480/edit?usp=sharing" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="resume-btn">
+          <a 
+            href="https://docs.google.com/document/d/1PVuf2utz1oP6ZlsNJ0O4DMaFG_JYheibp_RA12ee480/edit?usp=sharing" 
+            target="_blank" 
+            class="resume-btn">
             View Resume
           </a>
         </li>
@@ -28,45 +32,37 @@
     </div>
   </nav>
 
+  <!-- SHAPE BACKGROUND -->
   <div class="floating-background">
     <div class="shape dot"></div>
     <div class="shape triangle"></div>
     <div class="shape star"></div>
-    <div class="shape dot"></div>
-    <div class="shape triangle"></div>
-    <div class="shape star"></div>
-    <div class="shape dot"></div>
-    <div class="shape triangle"></div>
-    <div class="shape star"></div>
-    <!-- Add more for density -->
-    <div class="shape dot"></div>
     <div class="shape dot small"></div>
-    <div class="shape dot tiny"></div>
-
-    <div class="shape triangle"></div>
     <div class="shape triangle small"></div>
-
-    <div class="shape star"></div>
-    <div class="shape star tiny"></div>
     <div class="shape star small"></div>
-
   </div>
 
-  <h1>I’m a Web Developer</h1>
-  <p class="subtitle">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
+  <!-- HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>I’m a <span class="highlight">Web Developer</span></h1>
+      <p class="hero-subtitle">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
 
-  <div class="skills-icons">
-    <div><img src="https://img.icons8.com/color/48/html-5.png"/><p>HTML5</p></div>
-    <div><img src="https://img.icons8.com/color/48/css3.png"/><p>CSS3</p></div>
-    <div><img src="https://img.icons8.com/color/48/javascript--v1.png"/><p>JavaScript</p></div>
-    <div><img src="https://img.icons8.com/ultraviolet/48/react--v1.png"/><p>React</p></div>
-    <div><img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/><p>Photoshop</p></div>
-    <div><img src="https://img.icons8.com/color/48/salesforce.png"/><p>SFMC</p></div>
-  </div>
+      <div class="skills-icons">
+        <div><img src="https://img.icons8.com/color/48/html-5.png"/><p>HTML5</p></div>
+        <div><img src="https://img.icons8.com/color/48/css3.png"/><p>CSS3</p></div>
+        <div><img src="https://img.icons8.com/color/48/javascript--v1.png"/><p>JavaScript</p></div>
+        <div><img src="https://img.icons8.com/ultraviolet/48/react--v1.png"/><p>React</p></div>
+        <div><img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/><p>Photoshop</p></div>
+        <div><img src="https://img.icons8.com/color/48/salesforce.png"/><p>SFMC</p></div>
+      </div>
+    </div>
+  </header>
 
   <script>
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
     }
   </script>
 </body>
