@@ -1,22 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jasmine R. Parker | Developer & Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jasmine R. Parker | Web Developer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Navigation -->
   <nav class="navbar">
     <div class="logo">Jasmine R. Parker</div>
-
     <div class="hamburger" onclick="toggleMenu()">☰</div>
-
     <div class="nav-links" id="navLinks">
-      <div class="close-icon" onclick="toggleMenu()">✖</div>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -26,48 +21,46 @@
     </div>
   </nav>
 
+  <div class="floating-background">
+    <div class="shape dot"></div>
+    <div class="shape triangle"></div>
+    <div class="shape star"></div>
+    <div class="shape dot"></div>
+    <div class="shape triangle"></div>
+    <div class="shape star"></div>
+    <div class="shape dot"></div>
+    <div class="shape triangle"></div>
+    <div class="shape star"></div>
+    <!-- Add more for density -->
+    <div class="shape dot"></div>
+    <div class="shape dot small"></div>
+    <div class="shape dot tiny"></div>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>I’m a <span id="typewriter"></span></h1>
-      <p class="hero-subtitle">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
-      <div class="skill-icons">
-        <div class="icon-box"><img src="https://img.icons8.com/color/48/html-5.png"/><p>HTML</p></div>
-        <div class="icon-box"><img src="https://img.icons8.com/color/48/css3.png"/><p>CSS</p></div>
-        <div class="icon-box"><img src="https://img.icons8.com/color/48/javascript--v1.png"/><p>JavaScript</p></div>
-        <div class="icon-box"><img src="https://img.icons8.com/officel/48/react.png"/><p>React</p></div>
-        <div class="icon-box"><img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/><p>Photoshop</p></div>
-        <div class="icon-box"><img src="https://img.icons8.com/color/48/salesforce.png"/><p>SFMC</p></div>
-      </div>
-    </div>
-  </header>
+    <div class="shape triangle"></div>
+    <div class="shape triangle small"></div>
 
-  <script src="script.js"></script>
+    <div class="shape star"></div>
+    <div class="shape star tiny"></div>
+    <div class="shape star small"></div>
+
+  </div>
+
+  <h1>I’m a Web Developer</h1>
+  <p class="subtitle">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
+
+  <div class="skills-icons">
+    <div><img src="https://img.icons8.com/color/48/html-5.png"/><p>HTML5</p></div>
+    <div><img src="https://img.icons8.com/color/48/css3.png"/><p>CSS3</p></div>
+    <div><img src="https://img.icons8.com/color/48/javascript--v1.png"/><p>JavaScript</p></div>
+    <div><img src="https://img.icons8.com/ultraviolet/48/react--v1.png"/><p>React</p></div>
+    <div><img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/><p>Photoshop</p></div>
+    <div><img src="https://img.icons8.com/color/48/salesforce.png"/><p>SFMC</p></div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("active");
+    }
+  </script>
 </body>
-  <section class="projects" id="projects">
-    <h2 class="section-title">Featured Projects</h2>
-
-    <div class="project-list">
-      <div class="project-card">
-        <h3>Reign Wellness Landing Page</h3>
-        <p>A clean, mobile-first landing page built with HTML, CSS, and responsive design principles.</p>
-        <p class="tech">Tech: HTML, CSS</p>
-        <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">View Live</a>
-        <a href="https://github.com/shewebdeveloper/reignwellness" target="_blank">View Code</a>
-      </div>
-
-      <!-- Add more projects as needed -->
-      <!--
-      <div class="project-card">
-        <h3>Project Title</h3>
-        <p>Short description of the project.</p>
-        <p class="tech">Tech: React, SFMC</p>
-        <a href="#">View Live</a>
-        <a href="#">View Code</a>
-      </div>
-      -->
-    </div>
-  </section>
-
 </html>

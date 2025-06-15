@@ -1,10 +1,9 @@
-// Typewriter Effect
 const typewriter = document.getElementById("typewriter");
 const words = [
-  "Front-End Web Developer",
+  "Web Developer",
   "Email Production Developer",
-  "Responsive UI Designer",
-  "Creative Web Technologist"
+  "UI Designer",
+  "Creative Technologist"
 ];
 
 let wordIndex = 0;
@@ -33,13 +32,8 @@ function type() {
 
   setTimeout(type, delay);
 }
-
 type();
 
-// Toggle Mobile Nav
 function toggleMenu() {
   document.getElementById("navLinks").classList.toggle("active");
 }
-
-
-
