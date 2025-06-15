@@ -1,38 +1,45 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const typewriter = document.getElementById('typewriter');
-  const words = ['Front-End Developer', 'React Enthusiast', 'UX-Focused Coder', 'Creative Technologist'];
+// Typewriter Effect
+const typewriter = document.getElementById("typewriter");
+const words = [
+  "Front-End Developer",
+  "React Enthusiast",
+  "Photoshop Creative",
+  "Email Developer (SFMC + BeePro)"
+];
 
-  let wordIndex = 0;
-  let charIndex = 0;
-  let isDeleting = false;
+let wordIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
 
-  function type() {
-    const currentWord = words[wordIndex];
-    const fullText = isDeleting
-      ? currentWord.substring(0, charIndex--)
-      : currentWord.substring(0, charIndex++);
+function type() {
+  const currentWord = words[wordIndex];
+  typewriter.textContent = isDeleting
+    ? currentWord.substring(0, charIndex--)
+    : currentWord.substring(0, charIndex++);
 
-    typewriter.textContent = fullText;
+  let delay = isDeleting ? 60 : 120;
 
-    let delay = isDeleting ? 50 : 120;
-
-    // Ensure full word is displayed before pause
-    if (!isDeleting && charIndex === currentWord.length + 1) {
-      delay = 2000;
-      isDeleting = true;
-      charIndex = currentWord.length; // lock the index
-    }
-
-    // Once word is deleted
-    if (isDeleting && charIndex === 0) {
-      isDeleting = false;
-      wordIndex = (wordIndex + 1) % words.length;
-      delay = 500;
-    }
-
-    setTimeout(type, delay);
+  if (!isDeleting && charIndex === currentWord.length + 1) {
+    isDeleting = true;
+    delay = 2000;
+    charIndex = currentWord.length;
   }
 
-  type();
-});
+  if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    wordIndex = (wordIndex + 1) % words.length;
+    delay = 800;
+  }
+
+  setTimeout(type, delay);
+}
+
+type();
+
+// Toggle Mobile Nav
+function toggleMenu() {
+  document.getElementById("navLinks").classList.toggle("active");
+}
+
+
 

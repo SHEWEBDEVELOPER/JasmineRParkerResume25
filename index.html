@@ -3,68 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jass Reign | Front-End Developer</title>
+  <title>Jass Reign | Developer & Designer</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="hero">
-    <nav>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">Jass Reign</div>
+
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links" id="navLinks">
+      <div class="close-icon" onclick="toggleMenu()">✖</div>
       <ul>
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="Jass-Reign-Resume.pdf" download class="resume-btn">Download Resume</a></li>
       </ul>
-    </nav>
-
-    <div class="hero-content">
-      
-      <h1>I’m a <span id="typewriter"></span></h1>
-      <p>Skilled in front-end development, creative design, and email marketing automation.</p>
-        <div class="skill-icons">
-          <div class="icon-box">
-            <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML">
-            <p>HTML5</p>
-          </div>
-          <div class="icon-box">
-            <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
-            <p>CSS3</p>
-          </div>
-          <div class="icon-box">
-            <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript">
-            <p>JavaScript</p>
-          </div>
-          <div class="icon-box">
-            <img src="https://img.icons8.com/officel/48/react.png" alt="React">
-            <p>React.js</p>
-          </div>
-          <div class="icon-box">
-            <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop">
-            <p>Photoshop</p>
-          </div>
-          <div class="icon-box">
-            <img src="https://img.icons8.com/color/48/adobe-indesign.png" alt="InDesign">
-            <p>InDesign</p>
-          </div>
-          <div class="icon-box">
-            <img src="https://img.icons8.com/color/48/salesforce.png" alt="Salesforce Marketing Cloud">
-            <p>Email Marketing<br><small style="font-size: 0.7rem;">(SFMC + BeePro)</small></p>
-          </div>
-          </div>
-        </div>
-
-      
-      </div>
     </div>
+  </nav>
 
-    <div class="shapes-container">
-      <div class="circle"></div>
-      <div class="triangle"></div>
-      <div class="dot"></div>
-      <div class="circle small" style="top: 20%; left: 80%;"></div>
-      <div class="dot" style="top: 60%; left: 10%; width: 10px; height: 10px;"></div>
-      <div class="triangle" style="top: 75%; left: 60%; transform: scale(0.7);"></div>
-      <div class="circle large" style="top: 5%; left: 50%; width: 100px; height: 100px;"></div>
 
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>I’m a <span id="typewriter"></span></h1>
+      <p>Front-End Dev | React | Photoshop | Email Marketing</p>
+      <div class="skill-icons">
+        <div class="icon-box"><img src="https://img.icons8.com/color/48/html-5.png"/><p>HTML</p></div>
+        <div class="icon-box"><img src="https://img.icons8.com/color/48/css3.png"/><p>CSS</p></div>
+        <div class="icon-box"><img src="https://img.icons8.com/color/48/javascript--v1.png"/><p>JavaScript</p></div>
+        <div class="icon-box"><img src="https://img.icons8.com/officel/48/react.png"/><p>React</p></div>
+        <div class="icon-box"><img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/><p>Photoshop</p></div>
+        <div class="icon-box"><img src="https://img.icons8.com/color/48/salesforce.png"/><p>SFMC</p></div>
+      </div>
     </div>
   </header>
 

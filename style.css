@@ -1,137 +1,151 @@
-body, html {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
   font-family: 'Poppins', sans-serif;
+  background: #000;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  z-index: 1000;
+}
+
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.hamburger {
+  font-size: 2rem;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+
+.nav-links ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.resume-btn {
+  padding: 0.4rem 1rem;
+  border: 1px solid white;
+  border-radius: 5px;
+  background: transparent;
+  color: white;
+  transition: 0.3s;
+}
+
+.resume-btn:hover {
+  background: #f8d15d;
+  color: black;
 }
 
 .hero {
   height: 100vh;
   background: linear-gradient(135deg, #431c86, #ee2e68, #ff8a00);
-  color: white;
-  position: relative;
-  overflow: hidden;
-}
-
-nav ul {
   display: flex;
-  justify-content: flex-end;
-  padding: 1rem 2rem;
-  list-style: none;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  margin-left: 2rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #f8d15d;
-}
-
-.hero-content {
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 5rem 2rem;
-  position: relative;
-  z-index: 2;
-  max-width: 800px;
-  margin: 0 auto;
+  padding-top: 100px;
 }
 
+.hero-content {
+  max-width: 800px;
+  margin: auto;
+}
 
 h1 span {
-  color: #fff;
-  font-weight: bold;
   font-size: 3rem;
+  font-weight: bold;
+  color: white;
 }
 
-.skills img {
-  height: 50px;
-  margin-right: 1rem;
+p {
   margin-top: 1rem;
 }
 
-.shapes-container div {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.2);
-  animation: float 8s infinite ease-in-out;
-  border-radius: 50%;
-}
-
-.circle {
-  top: 10%;
-  left: 20%;
-  width: 80px;
-  height: 80px;
-}
-
-.triangle {
-  top: 40%;
-  left: 70%;
-  width: 0;
-  height: 0;
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent;
-  border-bottom: 60px solid rgba(255, 255, 255, 0.2);
-  border-radius: 0;
-}
-
-.dot {
-  top: 70%;
-  left: 30%;
-  width: 20px;
-  height: 20px;
-}
-.circle.small {
-  width: 40px;
-  height: 40px;
-}
-
-.circle.large {
-  width: 100px;
-  height: 100px;
-}
-
-.triangle {
-  animation: float 10s infinite ease-in-out;
-}
-
-.dot {
-  animation: float 12s infinite ease-in-out;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0); }
-}
 .skill-icons {
+  margin-top: 2rem;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;  /* Center on all screen sizes */
+  justify-content: center;
   gap: 1.5rem;
-  margin-top: 2.5rem;
-  z-index: 2;
-  position: relative;
 }
 
-
 .icon-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: white;
-  font-size: 0.85rem;
+  text-align: center;
+  font-size: 0.9rem;
 }
 
 .icon-box img {
   width: 48px;
   height: 48px;
-  margin-bottom: 0.5rem;
+}
+
+/* === MOBILE MENU === */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+/* === CLOSE ICON FOR MOBILE NAV === */
+.close-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 2rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Only show close icon on mobile */
+@media (max-width: 768px) {
+  .close-icon {
+    display: block;
+  }
 }
