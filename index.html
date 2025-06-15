@@ -1,16 +1,43 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Jass Reign | Front-End Developer</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  Hello world
+  <header class="hero">
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content">
+      <h1>I’m a <span id="typewriter"></span></h1>
+      <div class="skills">
+        <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML">
+        <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
+        <img src="https://img.icons8.com/color/48/000000/javascript--v1.png" alt="JavaScript">
+        <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React">
+      </div>
+    </div>
+
+    <div class="shapes-container">
+      <div class="circle"></div>
+      <div class="triangle"></div>
+      <div class="dot"></div>
+      <div class="circle small" style="top: 20%; left: 80%;"></div>
+      <div class="dot" style="top: 60%; left: 10%; width: 10px; height: 10px;"></div>
+      <div class="triangle" style="top: 75%; left: 60%; transform: scale(0.7);"></div>
+      <div class="circle large" style="top: 5%; left: 50%; width: 100px; height: 100px;"></div>
+
+    </div>
+  </header>
+
   <script src="script.js"></script>
 </body>
-
 </html>

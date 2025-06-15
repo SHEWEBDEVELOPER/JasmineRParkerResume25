@@ -1,4 +1,105 @@
-html {
-  height: 100%;
-  width: 100%;
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero {
+  height: 100vh;
+  background: linear-gradient(135deg, #431c86, #ee2e68, #ff8a00);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 2rem;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  margin-left: 2rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #f8d15d;
+}
+
+.hero-content {
+  padding: 5rem;
+  position: relative;
+  z-index: 2;
+}
+
+h1 span {
+  color: #fff;
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.skills img {
+  height: 50px;
+  margin-right: 1rem;
+  margin-top: 1rem;
+}
+
+.shapes-container div {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.2);
+  animation: float 8s infinite ease-in-out;
+  border-radius: 50%;
+}
+
+.circle {
+  top: 10%;
+  left: 20%;
+  width: 80px;
+  height: 80px;
+}
+
+.triangle {
+  top: 40%;
+  left: 70%;
+  width: 0;
+  height: 0;
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent;
+  border-bottom: 60px solid rgba(255, 255, 255, 0.2);
+  border-radius: 0;
+}
+
+.dot {
+  top: 70%;
+  left: 30%;
+  width: 20px;
+  height: 20px;
+}
+.circle.small {
+  width: 40px;
+  height: 40px;
+}
+
+.circle.large {
+  width: 100px;
+  height: 100px;
+}
+
+.triangle {
+  animation: float 10s infinite ease-in-out;
+}
+
+.dot {
+  animation: float 12s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
