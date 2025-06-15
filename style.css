@@ -32,10 +32,18 @@ nav ul li a:hover {
 }
 
 .hero-content {
-  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 5rem 2rem;
   position: relative;
   z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
 }
+
 
 h1 span {
   color: #fff;
@@ -102,4 +110,28 @@ h1 span {
   0% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
   100% { transform: translateY(0); }
+}
+.skill-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* Center on all screen sizes */
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  z-index: 2;
+  position: relative;
+}
+
+
+.icon-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.icon-box img {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 0.5rem;
 }
