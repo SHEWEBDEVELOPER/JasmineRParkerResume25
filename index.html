@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jasmine R. Parker | Web Developer</title>
 
-  <!-- Fonts -->
+  <!-- Fonts & Styles -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Kalam&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -14,8 +14,9 @@
   <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">Jasmine R. Parker</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
     <div class="nav-links" id="navLinks">
+      <div class="close-icon" onclick="toggleMenu()">✕</div>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -45,7 +46,7 @@
   <!-- HERO SECTION -->
   <header class="hero">
     <div class="hero-content">
-      <h1>I’m a <span class="highlight">Web Developer</span></h1>
+      <h1>I’m a <span id="typewriter"></span></h1>
       <p class="hero-subtitle">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
 
       <div class="skills-icons">
@@ -59,28 +60,74 @@
     </div>
   </header>
 
-  <!-- PREVIOUS WORK SECTION -->
+  <!-- ======= Previous Work Section ======= -->
   <section class="work-section" id="projects">
     <h2 class="section-title">Previous Work</h2>
 
+    <!-- ======= Project Card: Reign Wellness ======= -->
     <div class="project-card">
-      <h3 class="project-name">Reign Wellness</h3>
-      <p class="project-description">
-        A clean, responsive landing page designed to promote wellness services.
-        Built with HTML, CSS, and deployed through GitHub Pages.
-      </p>
-      <div class="project-links">
-        <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">Live Site</a>
-        <a href="https://github.com/shewebdeveloper/reignwellness" target="_blank">GitHub Repo</a>
+      <div class="project-info">
+        <h3 class="project-name">Reign Wellness</h3>
+        <p class="project-description">
+          A clean, responsive landing page designed to promote wellness services.
+          Built with HTML, CSS, and deployed through GitHub Pages.
+        </p>
+        <div class="project-links">
+          <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">Live Site</a>
+          <a href="https://github.com/shewebdeveloper/reignwellness" target="_blank">View Code</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- TOGGLE SCRIPT -->
   <script>
     function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
     }
   </script>
+
+  <script>
+    const titles = ["Web Developer", "Email Production Developer", "Creative Technologist"];
+    let currentTitle = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    let typewriterEl;
+
+    function typeEffect() {
+      const fullText = titles[currentTitle];
+
+      if (!typewriterEl) {
+        typewriterEl = document.getElementById("typewriter");
+      }
+
+      if (isDeleting) {
+        charIndex--;
+        typewriterEl.textContent = fullText.substring(0, charIndex);
+      } else {
+        charIndex++;
+        typewriterEl.textContent = fullText.substring(0, charIndex);
+      }
+
+      let typingSpeed = isDeleting ? 50 : 100;
+
+      if (!isDeleting && charIndex === fullText.length) {
+        // Pause after typing the whole word
+        typingSpeed = 2500;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        // Move to the next word after deleting
+        isDeleting = false;
+        currentTitle = (currentTitle + 1) % titles.length;
+        typingSpeed = 800;
+      }
+
+      setTimeout(typeEffect, typingSpeed);
+    }
+
+    document.addEventListener("DOMContentLoaded", typeEffect);
+  </script>
+
+
 </body>
 </html>
