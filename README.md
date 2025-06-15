@@ -1,5 +1,5 @@
 
-# Jass R Parker– Developer Portfolio
+# Jasmine R Parker– Developer Portfolio
 
 Welcome to my personal developer portfolio site. This project highlights my front-end development skills, email production capabilities, and creative approach to responsive UI design and branding.
 
