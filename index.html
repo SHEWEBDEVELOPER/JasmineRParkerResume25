@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jasmine R. Parker | Web Developer</title>
 
-  <!-- Fonts & Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Kalam&display=swap" rel="stylesheet" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Kalam&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">Jasmine R. Parker</div>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
     <div class="nav-links" id="navLinks">
-      <div class="close-icon" onclick="toggleMenu()">✕</div>
       <ul>
         <li><a href="#">Home</a></li>
         <li><a href="#projects">Projects</a></li>
@@ -32,16 +30,6 @@
       </ul>
     </div>
   </nav>
-
-  <!-- SHAPE BACKGROUND -->
-  <div class="floating-background">
-    <div class="shape dot"></div>
-    <div class="shape triangle"></div>
-    <div class="shape star"></div>
-    <div class="shape dot small"></div>
-    <div class="shape triangle small"></div>
-    <div class="shape star small"></div>
-  </div>
 
   <!-- HERO SECTION -->
   <header class="hero">
@@ -60,74 +48,52 @@
     </div>
   </header>
 
-  <!-- ======= Previous Work Section ======= -->
+  <!-- PREVIOUS WORK SECTION -->
   <section class="work-section" id="projects">
     <h2 class="section-title">Previous Work</h2>
-
-    <!-- ======= Project Card: Reign Wellness ======= -->
     <div class="project-card">
-      <div class="project-info">
-        <h3 class="project-name">Reign Wellness</h3>
-        <p class="project-description">
-          A clean, responsive landing page designed to promote wellness services.
-          Built with HTML, CSS, and deployed through GitHub Pages.
-        </p>
-        <div class="project-links">
-          <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">Live Site</a>
-          <a href="https://github.com/shewebdeveloper/reignwellness" target="_blank">View Code</a>
-        </div>
+      <h3>Reign Wellness</h3>
+      <p>A responsive landing page designed for a wellness brand using HTML & CSS.</p>
+      <div class="project-links">
+        <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">Live Site</a>
+        <a href="https://github.com/shewebdeveloper/reignwellness" target="_blank">View Code</a>
       </div>
     </div>
   </section>
 
+  <!-- JAVASCRIPT -->
   <script>
     function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("active");
+      document.getElementById("navLinks").classList.toggle("active");
     }
-  </script>
 
-  <script>
-    const titles = ["Web Developer", "Email Production Developer", "Creative Technologist"];
-    let currentTitle = 0;
+    const titles = ["Web Developer", "Email Production Developer", "UI/UX Designer"];
+    let index = 0;
     let charIndex = 0;
     let isDeleting = false;
-    let typewriterEl;
+    const typewriter = document.getElementById("typewriter");
 
-    function typeEffect() {
-      const fullText = titles[currentTitle];
-
-      if (!typewriterEl) {
-        typewriterEl = document.getElementById("typewriter");
-      }
-
+    function type() {
+      const currentTitle = titles[index];
       if (isDeleting) {
-        charIndex--;
-        typewriterEl.textContent = fullText.substring(0, charIndex);
+        typewriter.textContent = currentTitle.substring(0, charIndex--);
       } else {
-        charIndex++;
-        typewriterEl.textContent = fullText.substring(0, charIndex);
+        typewriter.textContent = currentTitle.substring(0, charIndex++);
       }
 
-      let typingSpeed = isDeleting ? 50 : 100;
-
-      if (!isDeleting && charIndex === fullText.length) {
-        // Pause after typing the whole word
-        typingSpeed = 2500;
+      if (!isDeleting && charIndex === currentTitle.length) {
         isDeleting = true;
+        setTimeout(type, 1200); // pause before deleting
       } else if (isDeleting && charIndex === 0) {
-        // Move to the next word after deleting
         isDeleting = false;
-        currentTitle = (currentTitle + 1) % titles.length;
-        typingSpeed = 800;
+        index = (index + 1) % titles.length;
+        setTimeout(type, 300);
+      } else {
+        setTimeout(type, isDeleting ? 50 : 100);
       }
-
-      setTimeout(typeEffect, typingSpeed);
     }
 
-    document.addEventListener("DOMContentLoaded", typeEffect);
+    type();
   </script>
-
-
 </body>
 </html>
