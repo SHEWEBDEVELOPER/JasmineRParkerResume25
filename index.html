@@ -6,10 +6,11 @@
   <title>Jasmine R. Parker | Web Developer</title>
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Kalam&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Kalam&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+
   <!-- NAVIGATION -->
   <nav class="navbar">
     <div class="logo">Jasmine R. Parker</div>
@@ -31,10 +32,20 @@
     </div>
   </nav>
 
+  <!-- SHAPE BACKGROUND -->
+  <div class="floating-background">
+    <div class="shape dot"></div>
+    <div class="shape triangle"></div>
+    <div class="shape star"></div>
+    <div class="shape dot small"></div>
+    <div class="shape triangle small"></div>
+    <div class="shape star small"></div>
+  </div>
+
   <!-- HERO SECTION -->
   <header class="hero">
     <div class="hero-content">
-      <h1>I’m a <span id="typewriter"></span></h1>
+      <h1>I’m a <span class="highlight" id="typewriter"></span></h1>
       <p class="hero-subtitle">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
 
       <div class="skills-icons">
@@ -48,12 +59,49 @@
     </div>
   </header>
 
-  <!-- PREVIOUS WORK SECTION -->
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById("navLinks");
+      nav.classList.toggle("active");
+    }
+
+    const roles = [
+      "Web Developer",
+      "Email Production Developer",
+      "Creative Coder",
+      "UX-First Designer"
+    ];
+    let roleIndex = 0;
+    let charIndex = 0;
+    const typewriterSpan = document.getElementById("typewriter");
+
+    function typeRole() {
+      if (charIndex < roles[roleIndex].length) {
+        typewriterSpan.textContent += roles[roleIndex].charAt(charIndex);
+        charIndex++;
+        setTimeout(typeRole, 100);
+      } else {
+        setTimeout(() => {
+          typewriterSpan.textContent = "";
+          charIndex = 0;
+          roleIndex = (roleIndex + 1) % roles.length;
+          setTimeout(typeRole, 300);
+        }, 2000); // Hold full sentence before rotating
+      }
+    }
+
+    typeRole();
+  </script>
+  <!-- ======= Previous Work Section ======= -->
   <section class="work-section" id="projects">
     <h2 class="section-title">Previous Work</h2>
+
+    <!-- Project Card: Reign Wellness -->
     <div class="project-card">
-      <h3>Reign Wellness</h3>
-      <p>A responsive landing page designed for a wellness brand using HTML & CSS.</p>
+      <h3 class="project-name">Reign Wellness</h3>
+      <p class="project-description">
+        A clean, responsive landing page designed to promote wellness services. Built with HTML, CSS, and deployed through GitHub Pages.
+      </p>
       <div class="project-links">
         <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">Live Site</a>
         <a href="https://github.com/shewebdeveloper/reignwellness" target="_blank">View Code</a>
@@ -61,39 +109,5 @@
     </div>
   </section>
 
-  <!-- JAVASCRIPT -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("navLinks").classList.toggle("active");
-    }
-
-    const titles = ["Web Developer", "Email Production Developer", "UI/UX Designer"];
-    let index = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typewriter = document.getElementById("typewriter");
-
-    function type() {
-      const currentTitle = titles[index];
-      if (isDeleting) {
-        typewriter.textContent = currentTitle.substring(0, charIndex--);
-      } else {
-        typewriter.textContent = currentTitle.substring(0, charIndex++);
-      }
-
-      if (!isDeleting && charIndex === currentTitle.length) {
-        isDeleting = true;
-        setTimeout(type, 1200); // pause before deleting
-      } else if (isDeleting && charIndex === 0) {
-        isDeleting = false;
-        index = (index + 1) % titles.length;
-        setTimeout(type, 300);
-      } else {
-        setTimeout(type, isDeleting ? 50 : 100);
-      }
-    }
-
-    type();
-  </script>
 </body>
 </html>
