@@ -220,11 +220,11 @@ body {
   font-family: 'Kalam', cursive;
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: #5f9df7;
+  color: #a69cf9;
 }
 
 .project-card {
-  background: rgba(20, 20, 40, 0.85); /* deep bluish-black with slight transparency */
+  background: rgb(#a69cf9); 
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 2rem;
@@ -236,7 +236,7 @@ body {
 
 .project-card:hover {
   transform: translateY(-6px);
-  background: rgba(30, 30, 60, 0.95);
+  background: #5f9df7
 }
 
 .project-name {
@@ -280,7 +280,7 @@ body {
 }
 
 .project-card {
-  background: #3a374f;
+  background: #a69cf9;
   border-radius: 18px;
   padding: 2rem;
   flex: 1 1 45%;
