@@ -224,37 +224,70 @@ body {
 }
 
 .project-card {
-  background: #f9f9f9;
-  border-radius: 20px;
+  background: rgba(20, 20, 40, 0.85); /* deep bluish-black with slight transparency */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   padding: 2rem;
-  margin: 0 auto 2rem;
-  max-width: 700px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  flex: 1 1 45%;
+  max-width: 500px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  background: rgba(30, 30, 60, 0.95);
 }
 
 .project-name {
-  font-family: 'Kalam', cursive;
-  font-size: 1.75rem;
-  margin-bottom: 1rem;
-  color: #d264f8;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff; /* clear and bright */
 }
 
 .project-description {
-  font-size: 1.1rem;
+  color: #f0f0f0; /* off-white for readability */
+  margin-bottom: 1rem;
   line-height: 1.6;
-  margin-bottom: 1.5rem;
+  font-weight: 400;
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .project-links a {
-  display: inline-block;
-  margin: 0 10px;
-  color: #5f9df7;
-  font-weight: bold;
+  color: #f8d15d; /* gold brand color */
   text-decoration: underline;
+  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 .project-links a:hover {
-  color: #a69cf9;
+  color: #fbe8a6; /* lighter highlight */
+}
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-items: stretch;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
+.project-card {
+  background: #3a374f;
+  border-radius: 18px;
+  padding: 2rem;
+  flex: 1 1 45%;
+  max-width: 500px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
