@@ -771,6 +771,8 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Expertise</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#resume" class="view-resume-btn" target="_blank" onclick="window.open('https://docs.google.com/document/d/1PVuf2utz1oP6ZlsNJ0O4DMaFG_JYheibp_RA12ee480/edit?tab=t.0#heading=h.o2yx03p46mac', '_blank')">View Resume</a></li>
             </ul>
@@ -956,7 +958,6 @@
       </div>
     </section>
     <!-- ===== SKILLS SECTION ===== -->
-    <!-- ===== SKILLS SECTION ===== -->
     <section class="skills-section" id="skills">
       <div class="skills-wrapper">
         <h2 class="skills-title"><span class="typing">Technical Expertise</span></h2>
@@ -1017,9 +1018,119 @@
       </div>
     </section>
 
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact-section" id="contact">
+      <h2 class="contact-title"><span class="typing">Let's Connect</span></h2>
+      <p class="contact-subtext">Have a project or idea in mind? Drop your info below and let’s build something amazing together.</p>
+
+      <form class="contact-form" action="https://formspree.io/f/xdkzloja" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="you@example.com" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890">
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="5" placeholder="How can I help you?" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
 
 
     <style>
+        .contact-section {
+          background: linear-gradient(135deg, #f8f9ff 0%, #f0e7ff 100%);
+          padding: 100px 20px;
+          text-align: center;
+        }
+
+        .contact-title {
+          font-size: 2.5rem;
+          color: #6f42c1;
+          font-family: 'Pacifico', cursive;
+          margin-bottom: 20px;
+          animation: pulseUnderline 1.2s infinite alternate;
+          position: relative;
+          display: inline-block;
+        }
+
+        .contact-title::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background: #6f42c1;
+          animation: pulseUnderlineBar 1.2s infinite alternate;
+        }
+
+        .contact-subtext {
+          color: #555;
+          font-size: 1.1rem;
+          margin-bottom: 40px;
+          max-width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+
+        .contact-form {
+          max-width: 600px;
+          margin: 0 auto;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          text-align: left;
+        }
+
+        .contact-form label {
+          font-weight: bold;
+          color: #6f42c1;
+          font-size: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+          padding: 15px;
+          border-radius: 10px;
+          border: 1px solid #ccc;
+          font-size: 1rem;
+          width: 100%;
+          outline: none;
+          transition: 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+          border-color: #764ba2;
+          box-shadow: 0 0 5px rgba(118, 75, 162, 0.3);
+        }
+
+        .contact-form button {
+          background: linear-gradient(90deg, #6f42c1, #764ba2, #00f2fe);
+          color: white;
+          border: none;
+          padding: 15px;
+          border-radius: 30px;
+          font-size: 1.1rem;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .contact-form button:hover {
+          transform: translateY(-3px);
+          box-shadow: 0 4px 12px rgba(111, 66, 193, 0.3);
+        }
+
+        @keyframes pulseUnderlineBar {
+          0% { background-color: #6f42c1; }
+          100% { background-color: #a17fe0; }
+        }
+
     .experience-section {
       background: linear-gradient(135deg, #f8f9ff 0%, #f0e7ff 100%);
       padding: 100px 20px;
@@ -1189,10 +1300,11 @@
       }
     }
         .skills-section {
-          background: linear-gradient(135deg, #f8f9ff 0%, #e9e1fc 100%);
+          background: #ffffff; /* sets background to white */
           padding: 100px 20px;
           text-align: center;
         }
+
 
         .skills-title {
           font-size: 2.5rem;
@@ -1267,6 +1379,55 @@
           border-radius: 10px;
           animation: gradientShift 6s ease infinite;
           transition: width 1.5s ease;
+        }
+    
+        .site-footer {
+          background: linear-gradient(-45deg, #667eea, #764ba2, #4facfe, #00f2fe);
+          background-size: 400% 400%;
+          animation: gradientShift 12s ease infinite;
+          color: white;
+          padding: 25px 10px;
+          font-family: 'Arial', sans-serif;
+          box-shadow: 0 -2px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-flex {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: wrap;
+          gap: 20px;
+          font-size: 1.1rem;
+        }
+
+        .footer-link {
+          color: white;
+          text-decoration: none;
+          font-weight: 600;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          padding: 10px 15px;
+          border-radius: 5px;
+          transition: background 0.3s ease, opacity 0.3s ease;
+        }
+
+        .footer-link:hover {
+          background: rgba(255, 255, 255, 0.1);
+          opacity: 0.8;
+        }
+
+
+        .footer-divider {
+          color: white;
+          font-weight: bold;
+          margin: 0 5px;
+        }
+
+        @keyframes gradientShift {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
         }
 
     </style>
@@ -1375,6 +1536,27 @@
         skillObserver.observe(skill);
       });
     </script>
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer class="site-footer">
+      <div class="footer-flex">
+        <a href="mailto:jas.parker2025@gmail.com" class="footer-link" target="_blank">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="Email Icon" />
+          Email Me
+        </a>
+        <span class="footer-divider">|</span>
+        <a href="tel:5627512732" class="footer-link">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/phone.png" alt="Phone Icon" />
+          Let’s Chat
+        </a>
+        <span class="footer-divider">|</span>
+        <a href="https://github.com/SHEWEBDEVELOPER" class="footer-link" target="_blank">
+          <img src="https://img.icons8.com/ios-glyphs/20/ffffff/github.png" alt="GitHub Icon" />
+          GitHub
+        </a>
+      </div>
+    </footer>
+
+    
 
 </body>
 </html>
