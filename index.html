@@ -956,6 +956,7 @@
       </div>
     </section>
     <!-- ===== SKILLS SECTION ===== -->
+    <!-- ===== SKILLS SECTION ===== -->
     <section class="skills-section" id="skills">
       <div class="skills-wrapper">
         <h2 class="skills-title"><span class="typing">Technical Expertise</span></h2>
@@ -963,42 +964,59 @@
           Proficient in building responsive UIs, managing CMS platforms, creating AMPscript-powered emails, and optimizing cloud-hosted assets. Continuously learning and applying best practices across modern web ecosystems.
         </p>
 
-        <div class="skills-grid">
+        <div class="skills-grid two-columns">
+          <!-- Skill Block -->
           <div class="skill">
             <label>HTML5</label>
-            <div class="skill-bar"><div class="fill" style="width: 95%"></div></div>
+            <div class="skill-bar"><div class="fill" data-width="95%"></div></div>
+            <p class="skill-detail">Built and maintained responsive landing pages using semantic HTML for accessibility and SEO performance.</p>
           </div>
+
           <div class="skill">
             <label>CSS3</label>
-            <div class="skill-bar"><div class="fill" style="width: 90%"></div></div>
+            <div class="skill-bar"><div class="fill" data-width="90%"></div></div>
+            <p class="skill-detail">Crafted clean, mobile-first UI layouts using Flexbox, Grid, and custom animations for seamless UX across devices.</p>
           </div>
+
           <div class="skill">
             <label>JavaScript</label>
-            <div class="skill-bar"><div class="fill" style="width: 85%"></div></div>
+            <div class="skill-bar"><div class="fill" data-width="85%"></div></div>
+            <p class="skill-detail">Developed dynamic site behavior and interactions including modals, sliders, and API integrations using vanilla JS.</p>
           </div>
+
           <div class="skill">
             <label>React</label>
-            <div class="skill-bar"><div class="fill" style="width: 75%"></div></div>
+            <div class="skill-bar"><div class="fill" data-width="75%"></div></div>
+            <p class="skill-detail">Built component-based UIs, managing state and props for scalable frontend applications with React.</p>
           </div>
+
           <div class="skill">
             <label>WordPress / Drupal</label>
-            <div class="skill-bar"><div class="fill" style="width: 90%"></div></div>
+            <div class="skill-bar"><div class="fill" data-width="90%"></div></div>
+            <p class="skill-detail">Created custom themes and templates with PHP and integrated content workflows for marketing teams.</p>
           </div>
+
           <div class="skill">
             <label>Salesforce Marketing Cloud (SFMC)</label>
-            <div class="skill-bar"><div class="fill" style="width: 85%"></div></div>
+            <div class="skill-bar"><div class="fill" data-width="85%"></div></div>
+            <p class="skill-detail">Built personalized email journeys using AMPscript, HTML, and data extensions inside SFMC Email Studio.</p>
           </div>
+
           <div class="skill">
             <label>AMPscript</label>
-            <div class="skill-bar"><div class="fill" style="width: 80%"></div></div>
+            <div class="skill-bar"><div class="fill" data-width="80%"></div></div>
+            <p class="skill-detail">Coded dynamic, data-driven email templates in SFMC, leveraging AMPscript logic for user-specific content.</p>
           </div>
+
           <div class="skill">
             <label>AWS (S3)</label>
-            <div class="skill-bar"><div class="fill" style="width: 70%"></div></div>
+            <div class="skill-bar"><div class="fill" data-width="70%"></div></div>
+            <p class="skill-detail">Managed and optimized hosted assets on Amazon S3 for web projects with performance and legal compliance in mind.</p>
           </div>
         </div>
       </div>
     </section>
+
 
 
     <style>
@@ -1206,12 +1224,16 @@
         }
 
         .skills-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 25px;
-          max-width: 600px;
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 40px;
+          max-width: 900px;
           margin: 0 auto;
           text-align: left;
+        }
+
+        .skills-grid.two-columns {
+          grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
         }
 
         .skill label {
@@ -1219,6 +1241,13 @@
           margin-bottom: 6px;
           display: block;
           color: #333;
+        }
+
+        .skill-detail {
+          font-size: 0.9rem;
+          color: #555;
+          margin-top: 5px;
+          line-height: 1.5;
         }
 
         .skill-bar {
@@ -1232,83 +1261,12 @@
 
         .skill-bar .fill {
           height: 100%;
+          width: 0;
           background: linear-gradient(90deg, #6f42c1, #764ba2, #00f2fe);
-          animation: gradientShift 6s ease infinite;
-        }
-
-        @keyframes pulseUnderlineBar {
-          0% { background: #6f42c1; }
-          100% { background: #a17fe0; }
-        }
-        .skills-section {
-          background: linear-gradient(135deg, #f8f9ff 0%, #e9e1fc 100%);
-          padding: 100px 20px;
-          text-align: center;
-        }
-
-        .skills-wrapper {
-          max-width: 800px;
-          margin: 0 auto;
-        }
-
-        .skills-title {
-          font-size: 2.5rem;
-          color: #6f42c1;
-          font-family: 'Pacifico', cursive;
-          margin-bottom: 20px;
-          position: relative;
-          display: inline-block;
-          animation: pulseUnderline 1.2s infinite alternate;
-        }
-
-        .skills-title::after {
-          content: "";
-          position: absolute;
-          bottom: -10px;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          background: #6f42c1;
-          animation: pulseUnderlineBar 1.2s infinite alternate;
-        }
-
-        .skills-description {
-          font-size: 1.05rem;
-          color: #444;
-          max-width: 700px;
-          margin: 0 auto 50px;
-          line-height: 1.6;
-        }
-
-        .skills-grid {
-          display: flex;
-          flex-direction: column;
-          gap: 25px;
-          max-width: 600px;
-          margin: 0 auto;
-          text-align: left;
-        }
-
-        .skill label {
-          font-weight: bold;
-          margin-bottom: 6px;
-          display: block;
-          color: #333;
-        }
-
-        .skill-bar {
-          width: 100%;
-          height: 12px;
-          background: #e4d9f3;
+          background-size: 300% 300%;
           border-radius: 10px;
-          overflow: hidden;
-          box-shadow: inset 0 0 4px rgba(0,0,0,0.1);
-        }
-
-        .skill-bar .fill {
-          height: 100%;
-          background: linear-gradient(90deg, #6f42c1, #764ba2, #00f2fe);
           animation: gradientShift 6s ease infinite;
+          transition: width 1.5s ease;
         }
 
     </style>
@@ -1398,5 +1356,25 @@
             });
         }
     </script>
+    <script>
+      // Animate skill bars when in view
+      const skillObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bar = entry.target.querySelector('.fill');
+            const width = bar.getAttribute('data-width');
+            bar.style.width = width;
+            skillObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+
+      document.querySelectorAll('.skill').forEach(skill => {
+        skillObserver.observe(skill);
+      });
+    </script>
+
 </body>
 </html>
