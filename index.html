@@ -874,6 +874,261 @@
         </div>
     </section>
 
+    <!-- ===== EXPERIENCE TIMELINE SECTION ===== -->
+    <section class="experience-section" id="experience">
+      <h2 class="experience-title"><span class="typing">Work Experience</span></h2>
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="timeline-tracker" id="timeline-dot"></div>
+
+          <!-- 1 -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>Front-End Web Developer</h3>
+              <h4>Erickson Senior Living</h4>
+              <span class="timeline-date">2023 – 2025</span>
+              <p>Built landing pages and dynamic homepages using WordPress, Drupal, Bootstrap, and custom JavaScript. Created Salesforce Marketing Cloud journeys and AMPscript templates, increasing email engagement by 40%.</p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>Lead Process Manager</h3>
+              <h4>Amwins Group</h4>
+              <span class="timeline-date">2020 – 2023</span>
+              <p>Coordinated process improvements, documented workflows, and collaborated with stakeholders across departments to enhance efficiency and communication.</p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>HTML/CSS Moodle Developer</h3>
+              <h4>Johns Hopkins University</h4>
+              <span class="timeline-date">2019 – 2020</span>
+              <p>Used HTML/CSS and JavaScript to transfer course content into Moodle LMS, increasing student engagement by 25% with responsive, accessible layouts.</p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>Lead Web Developer</h3>
+              <h4>Capital Technology LLC</h4>
+              <span class="timeline-date">2017 – 2021</span>
+              <p>Developed custom WordPress themes with e-commerce, APIs, and dashboards. Oversaw full-stack development from kickoff through maintenance.</p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>Web Developer & Brand Strategist</h3>
+              <h4>Tell Our Vision Publishing</h4>
+              <span class="timeline-date">2016 – 2021</span>
+              <p>Designed websites, e-commerce platforms, and branding systems for creatives. Built email campaigns and landing pages to support marketing goals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+    .experience-section {
+      background: linear-gradient(135deg, #f8f9ff 0%, #f0e7ff 100%);
+      padding: 100px 20px;
+    }
+
+            .experience-title {
+              font-size: 2.5rem;
+              color: #6f42c1;
+              font-family: 'Pacifico', cursive;
+              margin-bottom: 60px;
+              display: inline-block;
+              position: relative;
+              animation: pulseUnderline 1.2s infinite alternate;
+            }
+
+            .experience-section .experience-title-wrapper {
+              text-align: center;
+            }
+
+            .experience-title::after {
+              content: "";
+              position: absolute;
+              bottom: -10px;
+              left: 0;
+              width: 100%;
+              height: 3px;
+              background: #6f42c1;
+              animation: pulseUnderlineBar 1.2s infinite alternate;
+            }
+
+            @keyframes pulseUnderlineBar {
+              0% { background: #6f42c1; }
+              100% { background: #b38de4; }
+            }
+
+          /* NEW: Full centering */
+          display: inline-block;
+          text-align: center;
+          margin-left: auto;
+          margin-right: auto;
+          width: 100%;
+        }
+
+
+    .typing {
+      border-right: 2px solid #6f42c1;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: typing 4s steps(30, end), blink 0.8s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+    @keyframes pulseUnderline {
+      0% { border-color: #6f42c1; }
+      100% { border-color: #a17fe0; }
+    }
+
+    .timeline-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .timeline {
+      position: relative;
+      padding: 40px 0;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: #6f42c1;
+      transform: translateX(-50%);
+      z-index: 0;
+    }
+
+    .timeline-tracker {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%);
+      width: 22px;
+      height: 22px;
+      background: #6f42c1;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 0 12px rgba(111,66,193,0.5);
+      transition: top 0.2s ease;
+      z-index: 1;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 20px 40px;
+      box-sizing: border-box;
+    }
+
+    .timeline-item.left {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item.right {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-content {
+      background: linear-gradient(-45deg, #764ba2, #6f42c1, #a17fe0);
+      background-size: 300% 300%;
+      animation: gradientShift 12s ease infinite;
+      padding: 25px 30px;
+      border-radius: 12px;
+      color: white;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    .timeline-content h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+
+    .timeline-content h4 {
+      font-size: 1rem;
+      font-weight: 500;
+      margin: 5px 0 10px;
+      font-family: Arial, sans-serif;
+    }
+
+    .timeline-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .timeline-date {
+      display: block;
+      font-size: 0.85rem;
+      color: #ffeefc;
+      margin-bottom: 10px;
+    }
+
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item, .timeline-item.left, .timeline-item.right {
+        width: 100%;
+        left: 0;
+        text-align: left;
+      }
+
+      .timeline::before {
+        left: 20px;
+      }
+
+      .timeline-tracker {
+        left: 20px;
+        transform: translateX(0);
+      }
+    }
+    </style>
+
+    <script>
+    window.addEventListener('scroll', () => {
+      const timeline = document.querySelector('.timeline');
+      const dot = document.getElementById('timeline-dot');
+      const timelineTop = timeline.getBoundingClientRect().top + window.scrollY;
+      const timelineHeight = timeline.offsetHeight;
+      const scrollY = window.scrollY + window.innerHeight / 2;
+      const percent = Math.min(1, Math.max(0, (scrollY - timelineTop) / timelineHeight));
+      dot.style.top = `${percent * timelineHeight}px`;
+    });
+    </script>
+
+
     <script>
         /* ===== TYPEWRITER EFFECT MAGIC ===== */
         const phrases = [
