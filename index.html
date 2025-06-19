@@ -1,136 +1,811 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Jasmine R. Parker | Web Developer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasmine R. Parker</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Kalam&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+    <!-- Google Fonts - Pacifico for elegant headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
+        /* ===== GLOBAL RESET - Starting fresh! ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ===== HERO SECTION - Where the magic happens ===== */
+        .hero-section {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* ===== MOBILE-FIRST NAVIGATION ===== */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: white;
+            font-family: 'Pacifico', cursive;
+        }
+
+        /* Mobile menu toggle - Show on mobile */
+        .menu-toggle {
+            display: block;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 101;
+        }
+
+        /* Mobile navigation styles */
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 250px;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 30px;
+            transition: right 0.3s ease;
+            z-index: 100;
+        }
+
+        .nav-links.active {
+            right: 0;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: opacity 0.3s ease;
+            padding: 15px 20px;
+            border-radius: 5px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.8;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .view-resume-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid white;
+            padding: 15px 25px;
+            border-radius: 20px;
+            color: white !important;
+            text-decoration: none !important;
+            font-style: normal !important;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .view-resume-btn:hover {
+            background: white;
+            color: #667eea !important;
+            transform: translateY(-2px);
+        }
+
+        /* ===== HERO CONTENT - Mobile optimized and centered ===== */
+        .hero-content {
+            text-align: center;
+            padding: 60px 20px 80px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1;
+            max-width: 100%;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            min-height: 60px;
+            font-family: 'Pacifico', cursive;
+            line-height: 1.2;
+        }
+
+        .typewriter {
+            border-right: 3px solid white;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { border-color: transparent; }
+            51%, 100% { border-color: white; }
+        }
+
+        .hero-content .tagline {
+            font-size: 1.1rem;
+            font-style: italic;
+            max-width: 100%;
+            margin: 0 auto 40px auto;
+            line-height: 1.6;
+            opacity: 0.95;
+            padding: 0 10px;
+        }
+
+        /* ===== MOBILE-OPTIMIZED SKILLS SECTION ===== */
+        .skills-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 60px;
+            padding: 0 20px;
+            max-width: 100%;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            transition: transform 0.3s ease;
+            flex: 0 0 auto;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .skill-icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            padding: 8px;
+        }
+
+        .skill-icon:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        .skill-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-name {
+            color: white;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* ===== DECORATIVE ELEMENTS - Mobile optimized ===== */
+        .circle-decoration {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            top: 20%;
+            left: 5%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .triangle-decoration {
+            position: absolute;
+            bottom: 60px;
+            right: 8%;
+            width: 0;
+            height: 0;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid rgba(255, 255, 255, 0.08);
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        /* ===== PROJECTS SECTION - Mobile first ===== */
+        .projects-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 60px 20px;
+        }
+
+        .projects-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: #6f42c1;
+            font-weight: 300;
+            margin-bottom: 40px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: linear-gradient(-45deg, #667eea, #764ba2, #4facfe, #00f2fe);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            border-radius: 15px;
+            padding: 30px 25px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .project-card h3 {
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 15px;
+            font-family: 'Pacifico', cursive;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            opacity: 0.95;
+        }
+
+        .project-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .project-links a {
+            color: #ffd700;
+            text-decoration: underline;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+            padding: 5px 10px;
+        }
+
+        .project-links a:hover {
+            opacity: 0.8;
+        }
+
+        /* ===== RESPONSIVE BREAKPOINTS ===== */
+
+        /* Small phones (up to 480px) */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 15px;
+            }
+
+            .logo {
+                font-size: 1.3rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+            }
+
+            .hero-content .tagline {
+                font-size: 1rem;
+                padding: 0 5px;
+            }
+
+            .skill-icon {
+                width: 45px;
+                height: 45px;
+                padding: 6px;
+            }
+
+            .skill-name {
+                font-size: 0.75rem;
+            }
+
+            .projects-title {
+                font-size: 1.8rem;
+            }
+
+            .project-card {
+                padding: 25px 20px;
+            }
+
+            .project-card h3 {
+                font-size: 1.4rem;
+            }
+        }
+
+        /* Medium phones and small tablets (481px to 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.2rem;
+            }
+
+            .skill-icon {
+                width: 55px;
+                height: 55px;
+            }
+
+            .skill-name {
+                font-size: 0.85rem;
+            }
+
+            .projects-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Tablets and small desktops (769px to 1024px) */
+        @media (min-width: 769px) {
+            .menu-toggle {
+                display: none;
+            }
+
+            .nav-links {
+                position: static;
+                width: auto;
+                height: auto;
+                background: none;
+                backdrop-filter: none;
+                flex-direction: row;
+                justify-content: flex-end;
+                gap: 20px;
+            }
+
+            .nav-links a {
+                font-size: 1rem;
+                padding: 8px 12px;
+                width: auto;
+            }
+
+            .view-resume-btn {
+                padding: 8px 16px;
+                margin-top: 0;
+            }
+
+            .navbar {
+                padding: 20px 40px;
+            }
+
+            .hero-content {
+                padding: 80px 30px 100px;
+            }
+
+            .hero-content h1 {
+                font-size: 3.5rem;
+            }
+
+            .skills-container {
+                gap: 25px;
+            }
+
+            .skill-icon {
+                width: 65px;
+                height: 65px;
+            }
+
+            .skill-name {
+                font-size: 0.9rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+                max-width: 800px;
+                gap: 35px;
+            }
+        }
+
+        /* Large screens (1025px and up) */
+        @media (min-width: 1025px) {
+            .navbar {
+                padding: 20px 50px;
+            }
+
+            .hero-content {
+                padding: 100px 20px;
+            }
+
+            .hero-content h1 {
+                font-size: 4rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.3rem;
+                max-width: 600px;
+            }
+
+            .skills-container {
+                gap: 30px;
+            }
+
+            .skill-icon {
+                width: 75px;
+                height: 75px;
+                padding: 10px;
+            }
+
+            .skill-name {
+                font-size: 1rem;
+            }
+
+            .projects-section {
+                padding: 100px 50px;
+            }
+
+            .projects-title {
+                font-size: 3rem;
+                margin-bottom: 60px;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+                max-width: 1200px;
+                gap: 40px;
+            }
+
+            .project-card {
+                padding: 40px;
+            }
+
+            .project-card h3 {
+                font-size: 2rem;
+                margin-bottom: 20px;
+            }
+
+            .project-card p {
+                font-size: 1.1rem;
+                line-height: 1.7;
+                margin-bottom: 30px;
+            }
+
+            .project-links {
+                gap: 30px;
+            }
+
+            .project-links a {
+                font-size: 1.1rem;
+            }
+
+            .circle-decoration {
+                width: 200px;
+                height: 200px;
+                top: 15%;
+                left: 8%;
+            }
+
+            .triangle-decoration {
+                bottom: 80px;
+                right: 10%;
+                border-left: 40px solid transparent;
+                border-right: 40px solid transparent;
+                border-bottom: 60px solid rgba(255, 255, 255, 0.08);
+            }
+        }
+
+        /* Touch improvements for mobile */
+        @media (hover: none) and (pointer: coarse) {
+            .skill-item:hover,
+            .project-card:hover,
+            .view-resume-btn:hover {
+                transform: none;
+            }
+
+            .skill-item:active {
+                transform: translateY(-5px);
+            }
+
+            .project-card:active {
+                transform: translateY(-5px);
+            }
+
+            .nav-links a:hover {
+                background: none;
+            }
+
+            .nav-links a:active {
+                background: rgba(255, 255, 255, 0.1);
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            .skill-icon img {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Reduce motion for users who prefer it */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+
+            .hero-section {
+                background: #667eea;
+            }
+
+            .project-card {
+                background: #667eea;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="hero-section">
+        <!-- ===== NAVIGATION BAR ===== -->
+        <nav class="navbar">
+            <div class="logo">Jasmine R. Parker</div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resume" class="view-resume-btn" target="_blank" onclick="window.open('https://docs.google.com/document/d/1PVuf2utz1oP6ZlsNJ0O4DMaFG_JYheibp_RA12ee480/edit?tab=t.0#heading=h.o2yx03p46mac', '_blank')">View Resume</a></li>
+            </ul>
+        </nav>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="logo">Jasmine R. Parker</div>
-    <div class="hamburger" onclick="toggleMenu()">☰</div>
-    <div class="nav-links" id="navLinks">
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li>
-          <a 
-            href="https://docs.google.com/document/d/1PVuf2utz1oP6ZlsNJ0O4DMaFG_JYheibp_RA12ee480/edit?usp=sharing" 
-            target="_blank" 
-            class="resume-btn">
-            View Resume
-          </a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+        <!-- ===== HERO CONTENT SECTION ===== -->
+        <div class="hero-content">
+            <!-- Decorative elements for visual flair -->
+            <div class="circle-decoration"></div>
 
-  <!-- SHAPE BACKGROUND -->
-  <div class="floating-background">
-    <div class="shape dot"></div>
-    <div class="shape triangle"></div>
-    <div class="shape star"></div>
-    <div class="shape dot small"></div>
-    <div class="shape triangle small"></div>
-    <div class="shape star small"></div>
-  </div>
+            <!-- Main heading with dynamic typewriter effect -->
+            <h1>I'm a <span class="typewriter" id="typewriter">Creative Coder</span></h1>
+            <p class="tagline">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
 
-  <!-- HERO SECTION -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>I’m a <span class="highlight" id="typewriter"></span></h1>
-      <p class="hero-subtitle">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
+            <!-- ===== SKILLS SHOWCASE ===== -->
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-icon html5">
+                        <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5 Logo">
+                    </div>
+                    <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon css3">
+                        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3 Logo">
+                    </div>
+                    <span class="skill-name">CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon javascript">
+                        <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript Logo">
+                    </div>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon react">
+                        <img src="https://img.icons8.com/ultraviolet/48/react--v1.png" alt="React Logo">
+                    </div>
+                    <span class="skill-name">React</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon photoshop">
+                        <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop Logo">
+                    </div>
+                    <span class="skill-name">Photoshop</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon salesforce">
+                        <img src="https://img.icons8.com/color/48/salesforce.png" alt="Salesforce Logo">
+                    </div>
+                    <span class="skill-name">SFMC</span>
+                </div>
+            </div>
 
-      <div class="skills-icons">
-        <div><img src="https://img.icons8.com/color/48/html-5.png"/><p>HTML5</p></div>
-        <div><img src="https://img.icons8.com/color/48/css3.png"/><p>CSS3</p></div>
-        <div><img src="https://img.icons8.com/color/48/javascript--v1.png"/><p>JavaScript</p></div>
-        <div><img src="https://img.icons8.com/ultraviolet/48/react--v1.png"/><p>React</p></div>
-        <div><img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/><p>Photoshop</p></div>
-        <div><img src="https://img.icons8.com/color/48/salesforce.png"/><p>SFMC</p></div>
-      </div>
-    </div>
-  </header>
-
-  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navLinks");
-      nav.classList.toggle("active");
-    }
-
-    const roles = [
-      "Web Developer",
-      "Email Production Developer",
-      "Creative Coder",
-      "UX-First Designer"
-    ];
-    let roleIndex = 0;
-    let charIndex = 0;
-    const typewriterSpan = document.getElementById("typewriter");
-
-    function typeRole() {
-      if (charIndex < roles[roleIndex].length) {
-        typewriterSpan.textContent += roles[roleIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(typeRole, 100);
-      } else {
-        setTimeout(() => {
-          typewriterSpan.textContent = "";
-          charIndex = 0;
-          roleIndex = (roleIndex + 1) % roles.length;
-          setTimeout(typeRole, 300);
-        }, 2000); // Hold full sentence before rotating
-      }
-    }
-
-    typeRole();
-  </script>
-  <!-- ======= Previous Work Section ======= -->
-  <section class="work-section" id="projects">
-    <h2 class="section-title">Previous Work</h2>
-
-    <div class="projects-grid">
-      <!-- Project Card: Reign Wellness -->
-      <div class="project-card">
-        <div class="project-info">
-          <h3 class="project-name">Reign Wellness</h3>
-          <p class="project-description">
-            A clean, responsive landing page designed to promote wellness services.
-            Built with HTML, CSS, and deployed through GitHub Pages.
-          </p>
-          <div class="project-links">
-            <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">Live Site</a>
-            <span> | </span>
-            <a href="https://github.com/SHEWEBDEVELOPER/reignwellness" target="_blank">GitHub</a>
-          </div>
+            <!-- More decorative elements -->
+            <div class="triangle-decoration"></div>
         </div>
-      </div>
-
-      <!-- Project Card: Erickson Brunch & Tour -->
-      <div class="project-card">
-        <div class="project-info">
-          <h3 class="project-name">Erickson Brunch & Tour</h3>
-          <p class="project-description">
-            A custom landing page built with Drupal and Bootstrap. Features a responsive promo slider and supports staging environment best practices.
-          </p>
-          <div class="project-links">
-            <a href="https://www.ericksonseniorliving.com/join-us-lunch-and-tour" target="_blank">Live Site</a>
-            <span> | </span>
-            <a href="https://github.com/SHEWEBDEVELOPER/erickson-brunch-and-tour" target="_blank">GitHub</a>
-          </div>
-        </div>
-      </div>
     </div>
-  </section>
-  
-  <!-- ======= End of Previous Work Section ======= -->
 
+    <!-- ===== PROJECTS SHOWCASE SECTION ===== -->
+    <section class="projects-section" id="projects">
+        <h2 class="projects-title">Previous Work</h2>
+        <!-- Project cards showcasing recent work -->
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>Reign Wellness</h3>
+                <p>A clean, responsive landing page designed to promote wellness services. Built with HTML, CSS, and deployed through GitHub Pages.</p>
+                <div class="project-links">
+                    <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">Live Site</a>
+                    <span style="color: white;">|</span>
+                    <a href="https://github.com/SHEWEBDEVELOPER/reignwellness" target="_blank">GitHub</a>
+                </div>
+            </div>
+            <div class="project-card">
+                <h3>Erickson Brunch & Tour</h3>
+                <p>A custom landing page built with Drupal and Bootstrap. Features a responsive promo slider and supports staging environment best practices.</p>
+                <div class="project-links">
+                    <a href="#" target="_blank">Live Site</a>
+                    <span style="color: white;">|</span>
+                    <a href="#" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        /* ===== TYPEWRITER EFFECT MAGIC ===== */
+        const phrases = [
+            "Web Developer",
+            "Email Developer", 
+            "Creative Strategist",
+            "Brand Designer"
+        ];
+
+        let currentPhraseIndex = 0;
+        let currentCharIndex = 0;
+        let isDeleting = false;
+        const typewriterElement = document.getElementById('typewriter');
+        const typingSpeed = 100;
+        const deletingSpeed = 50;
+        const pauseTime = 2000;
+
+        function typeWriter() {
+            const currentPhrase = phrases[currentPhraseIndex];
+
+            if (isDeleting) {
+                typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex - 1);
+                currentCharIndex--;
+            } else {
+                typewriterElement.textContent = currentPhrase.substring(0, currentCharIndex + 1);
+                currentCharIndex++;
+            }
+
+            let speed = isDeleting ? deletingSpeed : typingSpeed;
+
+            if (!isDeleting && currentCharIndex === currentPhrase.length) {
+                speed = pauseTime;
+                isDeleting = true;
+            } 
+            else if (isDeleting && currentCharIndex === 0) {
+                isDeleting = false;
+                currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+            }
+
+            setTimeout(typeWriter, speed);
+        }
+
+        /* ===== MOBILE MENU TOGGLE ===== */
+        const menuToggle = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            navLinks.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    navLinks.classList.remove('active');
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
+                    navLinks.classList.remove('active');
+                }
+            });
+        }
+
+        // Start typewriter effect
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(typeWriter, 1000);
+        });
+
+        /* ===== PERFORMANCE OPTIMIZATIONS ===== */
+        // Lazy load images when they're about to come into view
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+        }
+
+        // Smooth scroll polyfill for older browsers
+        if (!('scrollBehavior' in document.documentElement.style)) {
+            const links = document.querySelectorAll('a[href^="#"]');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>
