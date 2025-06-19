@@ -166,6 +166,8 @@
         .typewriter {
             border-right: 3px solid white;
             animation: blink 1s infinite;
+            border-bottom: 2px solid white;
+            padding-bottom: 5px;
         }
 
         @keyframes blink {
@@ -183,15 +185,16 @@
             padding: 0 10px;
         }
 
-        /* ===== MOBILE-OPTIMIZED SKILLS SECTION ===== */
+        /* ===== SINGLE ROW SKILLS SECTION - FIXED FOR ALL DEVICES ===== */
         .skills-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 15px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            justify-items: center;
+            gap: 10px;
             margin-bottom: 60px;
             padding: 0 20px;
             max-width: 100%;
+            width: 100%;
         }
 
         .skill-item {
@@ -201,6 +204,7 @@
             text-align: center;
             transition: transform 0.3s ease;
             flex: 0 0 auto;
+            width: 100%;
         }
 
         .skill-item:hover {
@@ -208,18 +212,18 @@
         }
 
         .skill-icon {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
             border-radius: 12px;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             background: rgba(255, 255, 255, 0.95);
             box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
-            padding: 8px;
+            padding: 6px;
         }
 
         .skill-icon:hover {
@@ -236,7 +240,7 @@
 
         .skill-name {
             color: white;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             font-weight: 500;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
@@ -270,7 +274,7 @@
             animation: float 8s ease-in-out infinite reverse;
         }
 
-        /* ===== PROJECTS SECTION - Mobile first ===== */
+        /* ===== PROJECTS SECTION ===== */
         .projects-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             padding: 60px 20px;
@@ -283,6 +287,15 @@
             font-weight: 300;
             margin-bottom: 40px;
             font-family: 'Pacifico', cursive;
+            border-bottom: 3px solid #6f42c1;
+            padding-bottom: 10px;
+            display: inline-block;
+            width: auto;
+        }
+
+        .projects-title-container {
+            text-align: center;
+            margin-bottom: 40px;
         }
 
         .projects-grid {
@@ -344,6 +357,63 @@
             opacity: 0.8;
         }
 
+        /* ===== ABOUT SECTION ===== */
+        .about-section {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+            padding: 80px 20px;
+        }
+
+        .about-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-title {
+            font-size: 2.2rem;
+            color: #6f42c1;
+            font-weight: 300;
+            margin-bottom: 40px;
+            font-family: 'Pacifico', cursive;
+            border-bottom: 3px solid #6f42c1;
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .about-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 40px;
+        }
+
+        .about-highlights {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .highlight-item {
+            background: rgba(111, 66, 193, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 4px solid #6f42c1;
+            text-align: left;
+        }
+
+        .highlight-item h4 {
+            color: #6f42c1;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .highlight-item p {
+            color: #666;
+            line-height: 1.6;
+        }
+
         /* ===== RESPONSIVE BREAKPOINTS ===== */
 
         /* Small phones (up to 480px) */
@@ -366,14 +436,19 @@
                 padding: 0 5px;
             }
 
+            .skills-container {
+                gap: 8px;
+                padding: 0 10px;
+            }
+
             .skill-icon {
-                width: 45px;
-                height: 45px;
-                padding: 6px;
+                width: 35px;
+                height: 35px;
+                padding: 5px;
             }
 
             .skill-name {
-                font-size: 0.75rem;
+                font-size: 0.65rem;
             }
 
             .projects-title {
@@ -399,17 +474,32 @@
                 font-size: 1.2rem;
             }
 
+            .skills-container {
+                gap: 12px;
+                padding: 0 15px;
+            }
+
             .skill-icon {
-                width: 55px;
-                height: 55px;
+                width: 45px;
+                height: 45px;
+                padding: 7px;
             }
 
             .skill-name {
-                font-size: 0.85rem;
+                font-size: 0.75rem;
             }
 
             .projects-title {
                 font-size: 2.5rem;
+            }
+
+            .about-title {
+                font-size: 2.5rem;
+            }
+
+            .about-highlights {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
             }
         }
 
@@ -454,16 +544,18 @@
             }
 
             .skills-container {
-                gap: 25px;
+                gap: 15px;
+                padding: 0 20px;
             }
 
             .skill-icon {
-                width: 65px;
-                height: 65px;
+                width: 55px;
+                height: 55px;
+                padding: 8px;
             }
 
             .skill-name {
-                font-size: 0.9rem;
+                font-size: 0.8rem;
             }
 
             .projects-grid {
@@ -493,17 +585,18 @@
             }
 
             .skills-container {
-                gap: 30px;
+                gap: 20px;
+                padding: 0 30px;
             }
 
             .skill-icon {
-                width: 75px;
-                height: 75px;
+                width: 65px;
+                height: 65px;
                 padding: 10px;
             }
 
             .skill-name {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
 
             .projects-section {
@@ -513,6 +606,41 @@
             .projects-title {
                 font-size: 3rem;
                 margin-bottom: 60px;
+            }
+
+            .about-section {
+                padding: 120px 50px;
+            }
+
+            .about-title {
+                font-size: 3rem;
+                margin-bottom: 60px;
+            }
+
+            .about-content {
+                font-size: 1.2rem;
+                line-height: 1.9;
+                margin-bottom: 50px;
+            }
+
+            .about-highlights {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
+                margin-top: 60px;
+            }
+
+            .highlight-item {
+                padding: 35px;
+            }
+
+            .highlight-item h4 {
+                font-size: 1.4rem;
+                margin-bottom: 15px;
+            }
+
+            .highlight-item p {
+                font-size: 1.1rem;
+                line-height: 1.7;
             }
 
             .projects-grid {
@@ -620,6 +748,7 @@
             <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#resume" class="view-resume-btn" target="_blank" onclick="window.open('https://docs.google.com/document/d/1PVuf2utz1oP6ZlsNJ0O4DMaFG_JYheibp_RA12ee480/edit?tab=t.0#heading=h.o2yx03p46mac', '_blank')">View Resume</a></li>
             </ul>
@@ -634,7 +763,7 @@
             <h1>I'm a <span class="typewriter" id="typewriter">Creative Coder</span></h1>
             <p class="tagline">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
 
-            <!-- ===== SKILLS SHOWCASE ===== -->
+            <!-- ===== SKILLS SHOWCASE - NOW IN SINGLE ROW ===== -->
             <div class="skills-container">
                 <div class="skill-item">
                     <div class="skill-icon html5">
@@ -679,9 +808,11 @@
         </div>
     </div>
 
-    <!-- ===== PROJECTS SHOWCASE SECTION ===== -->
+    <!-- ===== PROJECTS SHOWCASE SECTION - NOW FIRST ===== -->
     <section class="projects-section" id="projects">
-        <h2 class="projects-title">Previous Work</h2>
+        <div class="projects-title-container">
+            <h2 class="projects-title">Previous Work</h2>
+        </div>
         <!-- Project cards showcasing recent work -->
         <div class="projects-grid">
             <div class="project-card">
@@ -705,13 +836,52 @@
         </div>
     </section>
 
+    <!-- ===== ABOUT SECTION - NOW AFTER PROJECTS ===== -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2 class="about-title">About Me</h2>
+            <div class="about-content">
+                <p>
+                    I'm a passionate web developer and creative strategist who believes in the power of thoughtful design and clean code. 
+                    With a background spanning front-end development, email marketing, and brand strategy, I bring a unique perspective 
+                    to every project I touch.
+                </p>
+                <p>
+                    My journey in tech has been driven by curiosity and a love for solving complex problems with elegant solutions. 
+                    Whether I'm crafting responsive websites, developing email campaigns, or creating digital experiences, 
+                    I approach each challenge with creativity and attention to detail.
+                </p>
+            </div>
+
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <h4>Creative Problem Solver</h4>
+                    <p>I thrive on turning complex challenges into intuitive, user-friendly solutions that make a real impact.</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Full-Stack Mindset</h4>
+                    <p>From front-end aesthetics to back-end functionality, I understand how all pieces work together seamlessly.</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Brand-Focused Developer</h4>
+                    <p>I don't just write code—I craft digital experiences that align with brand identity and business goals.</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Continuous Learner</h4>
+                    <p>The tech world evolves rapidly, and I'm always exploring new technologies and best practices to stay ahead.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
         /* ===== TYPEWRITER EFFECT MAGIC ===== */
         const phrases = [
-            "Web Developer",
-            "Email Developer", 
-            "Creative Strategist",
-            "Brand Designer"
+            "Creative Coder",
+            "Brand-Driven Developer", 
+            "Marketing-Minded Technologist",
+            "Strategic Web Architect",
+            "Digital Experience Builder"
         ];
 
         let currentPhraseIndex = 0;
@@ -747,6 +917,11 @@
             setTimeout(typeWriter, speed);
         }
 
+        // Start the typewriter effect when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            typeWriter();
+        });
+
         /* ===== MOBILE MENU TOGGLE ===== */
         const menuToggle = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
@@ -768,42 +943,6 @@
                 if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
                     navLinks.classList.remove('active');
                 }
-            });
-        }
-
-        // Start typewriter effect
-        document.addEventListener('DOMContentLoaded', function() {
-            setTimeout(typeWriter, 1000);
-        });
-
-        /* ===== PERFORMANCE OPTIMIZATIONS ===== */
-        // Lazy load images when they're about to come into view
-        if ('IntersectionObserver' in window) {
-            const imageObserver = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const img = entry.target;
-                        img.src = img.dataset.src;
-                        img.classList.remove('lazy');
-                        imageObserver.unobserve(img);
-                    }
-                });
-            });
-        }
-
-        // Smooth scroll polyfill for older browsers
-        if (!('scrollBehavior' in document.documentElement.style)) {
-            const links = document.querySelectorAll('a[href^="#"]');
-            links.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
             });
         }
     </script>
