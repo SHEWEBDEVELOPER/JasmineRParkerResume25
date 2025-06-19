@@ -287,10 +287,21 @@
             font-weight: 300;
             margin-bottom: 40px;
             font-family: 'Pacifico', cursive;
-            border-bottom: 3px solid #6f42c1;
-            padding-bottom: 10px;
             display: inline-block;
             width: auto;
+            position: relative;
+            animation: pulseUnderline 1.2s infinite alternate;
+        }
+
+        .projects-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #6f42c1;
+            animation: pulseUnderlineBar 1.2s infinite alternate;
         }
 
         .projects-title-container {
@@ -375,9 +386,20 @@
             font-weight: 300;
             margin-bottom: 40px;
             font-family: 'Pacifico', cursive;
-            border-bottom: 3px solid #6f42c1;
-            padding-bottom: 10px;
             display: inline-block;
+            position: relative;
+            animation: pulseUnderline 1.2s infinite alternate;
+        }
+
+        .about-title::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: #6f42c1;
+            animation: pulseUnderlineBar 1.2s infinite alternate;
         }
 
         .about-content {
@@ -811,7 +833,7 @@
     <!-- ===== PROJECTS SHOWCASE SECTION - NOW FIRST ===== -->
     <section class="projects-section" id="projects">
         <div class="projects-title-container">
-            <h2 class="projects-title">Previous Work</h2>
+            <h2 class="projects-title"><span class="typing">Previous Work</span></h2>
         </div>
         <!-- Project cards showcasing recent work -->
         <div class="projects-grid">
@@ -839,7 +861,7 @@
     <!-- ===== ABOUT SECTION - NOW AFTER PROJECTS ===== -->
     <section class="about-section" id="about">
         <div class="about-container">
-            <h2 class="about-title">About Me</h2>
+            <h2 class="about-title"><span class="typing">About Me</span></h2>
             <div class="about-content">
                 <p>
                     I'm a passionate web developer and creative strategist who believes in the power of thoughtful design and clean code. 
