@@ -1283,30 +1283,22 @@
       100% { background-position: 0% 50%; }
     }
 
-        @media (max-width: 768px) {
-          .timeline-item.left {
-            left: 0;
-            text-align: right;
-          }
+    @media (max-width: 768px) {
+      .timeline-item, .timeline-item.left, .timeline-item.right {
+        width: 100%;
+        left: 0;
+        text-align: left;
+      }
 
-          .timeline-item.right {
-            left: 50%;
-            text-align: left;
-          }
+      .timeline::before {
+        left: 20px;
+      }
 
-            @media (max-width: 768px) {
-              .timeline::before {
-                left: 50%;
-                transform: translateX(-50%);
-              }
-
-              .timeline-tracker {
-                left: 50%;
-                transform: translateX(-50%);
-              }
-            }
-
-
+      .timeline-tracker {
+        left: 20px;
+        transform: translateX(0);
+      }
+    }
         .skills-section {
           background: #ffffff; /* sets background to white */
           padding: 100px 20px;
@@ -1475,55 +1467,6 @@
 
           .footer-link {
             justify-content: center;
-          }
-        }
-        /* === MOBILE FIXES ONLY === */
-        @media (max-width: 480px) {
-
-          /* Fix timeline alignment */
-          .timeline::before {
-            left: 50%;
-            transform: translateX(-50%);
-          }
-
-          .timeline-tracker {
-            left: 50%;
-            transform: translateX(-50%);
-          }
-
-          /* Fix skills section to one column */
-          .skills-grid.two-columns {
-            grid-template-columns: 1fr;
-            padding: 0 15px;
-          }
-
-          .skills-section {
-            padding: 60px 20px;
-          }
-
-          .skill-detail {
-            font-size: 0.9rem;
-            line-height: 1.5;
-          }
-
-          /* Fix footer layout to stack cleanly */
-          .footer-flex {
-            flex-direction: column;
-            text-align: center;
-            gap: 12px;
-          }
-
-          .footer-divider {
-            display: none;
-          }
-
-          .footer-link {
-            justify-content: center;
-          }
-
-          /* Optional: Center contact form fields */
-          .contact-form {
-            padding: 0 10px;
           }
         }
 
