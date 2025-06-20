@@ -960,7 +960,7 @@
     <!-- ===== SKILLS SECTION ===== -->
     <section class="skills-section" id="skills">
       <div class="skills-wrapper">
-        <h2 class="skills-title"><span class="typing">Technical Expertise</span></h2>
+          <h2 class="skills-title"><span class="typing">Technical Expertise</span></h2>
         <p class="skills-description">
           Proficient in building responsive UIs, managing CMS platforms, creating AMPscript-powered emails, and optimizing cloud-hosted assets. Continuously learning and applying best practices across modern web ecosystems.
         </p>
@@ -1283,26 +1283,55 @@
       100% { background-position: 0% 50%; }
     }
 
-    @media (max-width: 768px) {
-      .timeline-item, .timeline-item.left, .timeline-item.right {
-        width: 100%;
-        left: 0;
-        text-align: left;
-      }
+        @media (max-width: 768px) {
+          .timeline::before {
+            left: 20px; /* move line to left */
+            transform: translateX(0); /* prevent it from shifting to center */
+          }
+        @media (max-width: 768px) {
+              .vertical-line::before {
+                left: 10px;
+                transform: none;
+              }
 
-      .timeline::before {
-        left: 20px;
-      }
+              .vertical-line .dot {
+                left: 10px;
+                transform: none;
+              }
+            }
 
-      .timeline-tracker {
-        left: 20px;
-        transform: translateX(0);
-      }
+          .timeline-tracker {
+            left: 12px; /* center the dot on the 4px line */
+            transform: translateX(0);
+          }
+
+          .timeline-item.left,
+          .timeline-item.right {
+            left: 0; /* prevent content from shifting */
+            text-align: left;
+          }
+        }
+        .timeline-section {
+          padding-bottom: 100px; /* adjust value based on visual spacing */
+        }
+
+
     }
         .skills-section {
-          background: #ffffff; /* sets background to white */
-          padding: 100px 20px;
+          background: #ffffff;
+          padding: 160px 20px 120px; /* increase top padding for breathing room */
           text-align: center;
+        }
+
+        .skills-section {
+          padding-top: 140px; /* you already have this, so the issue might be the section above */
+          padding-bottom: 140px; /* you already have this, so the issue might be the section above */
+            }
+
+        .skills-wrapper {
+          max-width: 1100px;
+          margin: 0 auto;
+          padding: 0 20px;
         }
 
 
@@ -1310,43 +1339,44 @@
           font-size: 2.5rem;
           color: #6f42c1;
           font-family: 'Pacifico', cursive;
-          margin-bottom: 20px;
-          position: relative;
+          margin-bottom: 60px;
           display: inline-block;
+          position: relative;
           animation: pulseUnderline 1.2s infinite alternate;
+
+          /* Add these two lines 👇 */
+          left: 50%;
+          transform: translateX(-50%);
         }
 
+        
         .skills-title::after {
           content: "";
           position: absolute;
           bottom: -10px;
-          left: 0;
-          width: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100%; /* stays 100% to match the text width */
           height: 3px;
           background: #6f42c1;
           animation: pulseUnderlineBar 1.2s infinite alternate;
         }
 
-        .skills-description {
-          font-size: 1.05rem;
-          color: #444;
-          max-width: 700px;
-          margin: 0 auto 50px;
-          line-height: 1.6;
-        }
 
-        .skills-grid {
-          display: grid;
-          grid-template-columns: 1fr;
-          gap: 40px;
-          max-width: 900px;
-          margin: 0 auto;
-          text-align: left;
+        .skills-description {
+          text-align: center;
+          margin: 0 auto 50px auto;
+          max-width: 750px;
         }
 
         .skills-grid.two-columns {
-          grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 40px;
+          justify-content: center;
+          align-items: start;
         }
+       
 
         .skill label {
           font-weight: bold;
@@ -1398,6 +1428,23 @@
           flex-wrap: wrap;
           gap: 20px;
           font-size: 1.1rem;
+        }
+        .footer {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-wrap: nowrap;
+          gap: 20px; /* Adjust spacing as needed */
+          flex-direction: row;
+          text-align: center;
+          font-size: 0.95rem;
+          padding: 15px;
+        }
+
+        .footer a {
+          color: white;
+          text-decoration: none;
+          white-space: nowrap;
         }
 
         .footer-link {
@@ -1467,6 +1514,15 @@
 
           .footer-link {
             justify-content: center;
+          }
+        }
+        @media (max-width: 768px) {
+          .timeline-item {
+            width: 100%;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px 20px;
           }
         }
 
@@ -1596,7 +1652,6 @@
       </div>
     </footer>
 
-    
 
 </body>
 </html>
