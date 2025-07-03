@@ -1025,12 +1025,18 @@
             }
 
             @media (max-width: 768px) {
-              .skills-title {
-                text-align: center !important;
-                display: block;
-                width: 100%;
-              }
-            }
+          .skills-section {
+            text-align: center;
+          }
+
+          .skills-title {
+            text-align: center !important;
+            display: block;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+          }
+        }
 
             .certs-container {
                 display: flex;
@@ -1577,7 +1583,7 @@
         .timeline-section {
           padding-bottom: 100px;
         }
-        
+
         .skills-section {
           background: #ffffff;
           padding: 160px 20px 120px;
@@ -1610,7 +1616,7 @@
             background: #6f42c1;
             animation: pulseUnderlineBar 1.2s infinite alternate;
 
-        
+
 
         .skills-grid {
           display: grid !important;
@@ -1675,7 +1681,7 @@
 
         /* Mobile - Single column */
         @media screen and
-    
+
         .site-footer {
           background: linear-gradient(-45deg, #667eea, #764ba2, #4facfe, #00f2fe);
           background-size: 400% 400%;
@@ -1694,7 +1700,7 @@
           gap: 20px;
           font-size: 1.1rem;
         }
-        
+
 
         .footer-link {
           color: white;
@@ -1739,7 +1745,7 @@
           width: 100%;
           display: block;
         }
-        
+
         @media (max-width: 480px) {
           .timeline::before {
             left: 20px; /* or whatever pixel value works best for you */
@@ -1788,7 +1794,7 @@
           padding: 0;
           min-height: 100vh;
         }
-        
+
 
     </style>
 
@@ -1889,7 +1895,7 @@
           }
         });
       }, {
-        threshold: 0.5
+           threshold: 0.5
       });
 
       document.querySelectorAll('.skill').forEach(skill => {
