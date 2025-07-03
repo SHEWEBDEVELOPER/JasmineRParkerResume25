@@ -1680,7 +1680,12 @@
         }
 
         /* Mobile - Single column */
-        @media screen and
+        @media screen and (max-width: 768px) {
+          .skills-grid {
+            grid-template-columns: 1fr !important;
+            gap: 30px !important;
+          }
+        }
 
         .site-footer {
           background: linear-gradient(-45deg, #667eea, #764ba2, #4facfe, #00f2fe);
