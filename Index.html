@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Jasmine R. Parker</title>
-<!-- Google Fonts - Pacifico for elegant headings -->
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&amp;display=swap" rel="stylesheet"/>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasmine R. Parker</title>
+
+    <!-- Google Fonts - Pacifico for elegant headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+    <style>
         /* ===== GLOBAL RESET - Starting fresh! ===== */
         * {
             margin: 0;
@@ -770,8 +771,29 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+.skills-title {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 60px;
+  display: inline-block;
+  position: relative;
+  animation: pulseUnderline 1.2s infinite alternate;
+  text-align: center;
+  width: 100%;
+}
+
+.skills-title span.typing {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #6f42c1;
+}
+
 @media screen and (max-width: 768px) {
-  
+  .skills-title {
+    text-align: center;
+  }
 }
 .skills-description {
   text-align: center;
@@ -831,7 +853,11 @@
   .skills-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media screen and (max-width: 768px) {
-  
+  .skills-title { text-align: center; display: block; width: 100%; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;}
   .skills-grid { grid-template-columns: 1fr; }
 }
 
@@ -867,58 +893,20 @@
 }
 
 
-.skills-title span.typing::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #6f42c1;
-}
-.skills-title, .skills-title span,
-.certifications-section 
-
-.skills-title::after,
-.certifications-section .skills-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 3px;
-  width: 100%;
-  background: #6f42c1;
-}
-.skills-title, .skills-title span,
-.certifications-section 
-
-.skills-title::after,
-.certifications-section .skills-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 3px;
-  width: 100%;
-  background: #6f42c1;
-}
-.skills-title, .skills-title span,
-.certifications-section .skills-title {
+.skills-title {
   font-size: 2.5rem;
   color: #6f42c1;
   font-family: 'Pacifico', cursive;
-  text-align: center;
   margin-bottom: 60px;
+  text-align: center;
 }
 
-.skills-title span,
-.certifications-section .skills-title span {
+.skills-title span.typing {
   display: inline-block;
   position: relative;
 }
 
-.skills-title span::after,
-.certifications-section .skills-title span::after {
+.skills-title span.typing::after {
   content: "";
   position: absolute;
   bottom: -10px;
@@ -930,243 +918,257 @@
 </style>
 </head>
 <body>
-<div class="hero-section">
-<!-- ===== NAVIGATION BAR ===== -->
-<nav class="navbar">
-<div class="logo">Jasmine R. Parker</div>
-<button aria-label="Toggle menu" class="menu-toggle" id="menu-toggle">☰</button>
-<ul class="nav-links" id="nav-links">
-<li><a href="#home">Home</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#experience">Experience</a></li>
-<li><a href="#skills">Expertise</a></li>
-<li><a "="" href="#certifications">Certifications</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><a class="view-resume-btn" href="#resume" onclick="window.open('https://drive.google.com/file/d/1eQ78t5NBs1c61zuicauk8FRLIS5PsZEO/view?usp=sharing')" target="_blank">View Resume</a></li>
-</ul>
-</nav>
-<!-- ===== HERO CONTENT SECTION ===== -->
-<div class="hero-content">
-<!-- Decorative elements for visual flair -->
-<div class="circle-decoration"></div>
-<!-- Main heading with dynamic typewriter effect -->
-<h1>I'm a <span class="typewriter" id="typewriter">Creative Coder</span></h1>
-<p class="tagline">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
-<!-- ===== SKILLS SHOWCASE - NOW IN SINGLE ROW ===== -->
-<div class="skills-container">
-<div class="skill-item">
-<div class="skill-icon html5">
-<img alt="HTML5 Logo" src="https://img.icons8.com/color/48/html-5.png"/>
-</div>
-<span class="skill-name">HTML5</span>
-</div>
-<div class="skill-item">
-<div class="skill-icon css3">
-<img alt="CSS3 Logo" src="https://img.icons8.com/color/48/css3.png"/>
-</div>
-<span class="skill-name">CSS3</span>
-</div>
-<div class="skill-item">
-<div class="skill-icon javascript">
-<img alt="JavaScript Logo" src="https://img.icons8.com/color/48/javascript--v1.png"/>
-</div>
-<span class="skill-name">JavaScript</span>
-</div>
-<div class="skill-item">
-<div class="skill-icon react">
-<img alt="React Logo" src="https://img.icons8.com/ultraviolet/48/react--v1.png"/>
-</div>
-<span class="skill-name">React</span>
-</div>
-<div class="skill-item">
-<div class="skill-icon photoshop">
-<img alt="Photoshop Logo" src="https://img.icons8.com/color/48/adobe-photoshop--v1.png"/>
-</div>
-<span class="skill-name">Photoshop</span>
-</div>
-<div class="skill-item">
-<div class="skill-icon salesforce">
-<img alt="Salesforce Logo" src="https://img.icons8.com/color/48/salesforce.png"/>
-</div>
-<span class="skill-name">SFMC</span>
-</div>
-</div>
-<!-- More decorative elements -->
-<div class="triangle-decoration"></div>
-</div>
-</div>
-<!-- ===== PROJECTS SHOWCASE SECTION - NOW FIRST ===== -->
-<section class="projects-section" id="projects">
-<div class="projects-title-container">
-<h2 class="projects-title"><span class="typing">Previous Work</span></h2>
-</div>
-<!-- Project cards showcasing recent work -->
-<div class="projects-grid">
-<div class="project-card">
-<h3>GlowUp Nature Case Study</h3>
-<p>Designed and developed a 5-part conditional welcome email journey for a wellness skincare brand. Executed full campaign strategy, copywriting, responsive email design, and a visual roadmap to showcase segmentation logic, user triggers, and engagement reactivation paths. Built using HTML/CSS and optimized for both desktop and mobile.
+    <div class="hero-section">
+        <!-- ===== NAVIGATION BAR ===== -->
+        <nav class="navbar">
+            <div class="logo">Jasmine R. Parker</div>
+            <button class="menu-toggle" id="menu-toggle" aria-label="Toggle menu">☰</button>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Expertise</a></li>
+                <li><a href="#certifications"">Certifications</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#resume" class="view-resume-btn" target="_blank" onclick="window.open('https://drive.google.com/file/d/1eQ78t5NBs1c61zuicauk8FRLIS5PsZEO/view?usp=sharing')">View Resume</a></li>
+            </ul>
+        </nav>
+
+        <!-- ===== HERO CONTENT SECTION ===== -->
+        <div class="hero-content">
+            <!-- Decorative elements for visual flair -->
+            <div class="circle-decoration"></div>
+
+            <!-- Main heading with dynamic typewriter effect -->
+            <h1>I'm a <span class="typewriter" id="typewriter">Creative Coder</span></h1>
+            <p class="tagline">Coding with intention, creativity, and a passion for elevating every digital experience.</p>
+
+            <!-- ===== SKILLS SHOWCASE - NOW IN SINGLE ROW ===== -->
+            <div class="skills-container">
+                <div class="skill-item">
+                    <div class="skill-icon html5">
+                        <img src="https://img.icons8.com/color/48/html-5.png" alt="HTML5 Logo">
+                    </div>
+                    <span class="skill-name">HTML5</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon css3">
+                        <img src="https://img.icons8.com/color/48/css3.png" alt="CSS3 Logo">
+                    </div>
+                    <span class="skill-name">CSS3</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon javascript">
+                        <img src="https://img.icons8.com/color/48/javascript--v1.png" alt="JavaScript Logo">
+                    </div>
+                    <span class="skill-name">JavaScript</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon react">
+                        <img src="https://img.icons8.com/ultraviolet/48/react--v1.png" alt="React Logo">
+                    </div>
+                    <span class="skill-name">React</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon photoshop">
+                        <img src="https://img.icons8.com/color/48/adobe-photoshop--v1.png" alt="Photoshop Logo">
+                    </div>
+                    <span class="skill-name">Photoshop</span>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-icon salesforce">
+                        <img src="https://img.icons8.com/color/48/salesforce.png" alt="Salesforce Logo">
+                    </div>
+                    <span class="skill-name">SFMC</span>
+                </div>
+            </div>
+
+            <!-- More decorative elements -->
+            <div class="triangle-decoration"></div>
+        </div>
+    </div>
+
+    <!-- ===== PROJECTS SHOWCASE SECTION - NOW FIRST ===== -->
+    <section class="projects-section" id="projects">
+        <div class="projects-title-container">
+            <h2 class="projects-title"><span class="typing">Previous Work</span></h2>
+        </div>
+        <!-- Project cards showcasing recent work -->
+        <div class="projects-grid">
+            <div class="project-card">
+                <h3>GlowUp Nature Case Study</h3>
+                <p>Designed and developed a 5-part conditional welcome email journey for a wellness skincare brand. Executed full campaign strategy, copywriting, responsive email design, and a visual roadmap to showcase segmentation logic, user triggers, and engagement reactivation paths. Built using HTML/CSS and optimized for both desktop and mobile.
 
 </p>
-<div class="project-links">
-<a href="https://shewebdeveloper.github.io/GlowUp-Nature-Case-Study-v2/" target="_blank">Full Case Study</a>
-<span style="color: white;">|</span>
-<a href="https://github.com/SHEWEBDEVELOPER/GlowUp-Nature-Case-Study-v2" target="_blank">GitHub</a>
-</div>
-</div>
-</div>
-</section>
-<!-- ===== ABOUT SECTION - NOW AFTER PROJECTS ===== -->
-<section class="about-section" id="about">
-<div class="about-container">
-<h2 class="about-title"><span class="typing">About Me</span></h2>
-<div class="about-content">
-<p>
+                <div class="project-links">
+                    <a href="https://shewebdeveloper.github.io/GlowUp-Nature-Case-Study-v2/" target="_blank">Full Case Study</a>
+                    <span style="color: white;">|</span>
+                    <a href="https://github.com/SHEWEBDEVELOPER/GlowUp-Nature-Case-Study-v2" target="_blank">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ABOUT SECTION - NOW AFTER PROJECTS ===== -->
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <h2 class="about-title"><span class="typing">About Me</span></h2>
+            <div class="about-content">
+                <p>
                     I'm a passionate web developer and creative strategist who believes in the power of thoughtful design and clean code. 
                     With a background spanning front-end development, email marketing, and brand strategy, I bring a unique perspective 
                     to every project I touch.
                 </p>
-<p>
+                <p>
                     My journey in tech has been driven by curiosity and a love for solving complex problems with elegant solutions. 
                     Whether I'm crafting responsive websites, developing email campaigns, or creating digital experiences, 
                     I approach each challenge with creativity and attention to detail.
                 </p>
-</div>
-<div class="about-highlights">
-<div class="highlight-item">
-<h4>Creative Problem Solver</h4>
-<p>I thrive on turning complex challenges into intuitive, user-friendly solutions that make a real impact.</p>
-</div>
-<div class="highlight-item">
-<h4>Full-Stack Mindset</h4>
-<p>From front-end aesthetics to back-end functionality, I understand how all pieces work together seamlessly.</p>
-</div>
-<div class="highlight-item">
-<h4>Brand-Focused Developer</h4>
-<p>I don't just write code—I craft digital experiences that align with brand identity and business goals.</p>
-</div>
-<div class="highlight-item">
-<h4>Continuous Learner</h4>
-<p>The tech world evolves rapidly, and I'm always exploring new technologies and best practices to stay ahead.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- ===== EXPERIENCE TIMELINE SECTION ===== -->
-<section class="experience-section" id="experience">
-<h2 class="experience-title"><span class="typing">Work Experience</span></h2>
-<div class="timeline-container">
-<div class="timeline">
-<div class="timeline-tracker" id="timeline-dot"></div>
-<!-- 1 -->
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>Front-End Web Developer</h3>
-<h4>Erickson Senior Living</h4>
-<span class="timeline-date">2023 – 2025</span>
-<p>Built landing pages and dynamic homepages using WordPress, Drupal, Bootstrap, and custom JavaScript. Created Salesforce Marketing Cloud journeys and AMPscript templates, increasing email engagement by 40%.</p>
-</div>
-</div>
-<!-- 2 -->
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>Lead Process Manager</h3>
-<h4>Amwins Group</h4>
-<span class="timeline-date">2020 – 2023</span>
-<p>Coordinated process improvements, documented workflows, and collaborated with stakeholders across departments to enhance efficiency and communication.</p>
-</div>
-</div>
-<!-- 3 -->
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>HTML/CSS Moodle Developer</h3>
-<h4>Johns Hopkins University</h4>
-<span class="timeline-date">2019 – 2020</span>
-<p>Used HTML/CSS and JavaScript to transfer course content into Moodle LMS, increasing student engagement by 25% with responsive, accessible layouts.</p>
-</div>
-</div>
-<!-- 4 -->
-<div class="timeline-item right">
-<div class="timeline-content">
-<h3>Lead Web Developer</h3>
-<h4>Capital Technology LLC</h4>
-<span class="timeline-date">2017 – 2021</span>
-<p>Developed custom WordPress themes with e-commerce, APIs, and dashboards. Oversaw full-stack development from kickoff through maintenance.</p>
-</div>
-</div>
-<!-- 5 -->
-<div class="timeline-item left">
-<div class="timeline-content">
-<h3>Web Developer &amp; Brand Strategist</h3>
-<h4>Tell Our Vision Publishing</h4>
-<span class="timeline-date">2016 – 2021</span>
-<p>Designed websites, e-commerce platforms, and branding systems for creatives. Built email campaigns and landing pages to support marketing goals.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- ===== SKILLS SECTION ===== -->
-<section class="skills-section" id="skills">
-<div class="skills-wrapper">
-<h2 class="skills-title"><span class="typing">Technical Expertise</span></h2>
-<p class="skills-description">
+            </div>
+
+            <div class="about-highlights">
+                <div class="highlight-item">
+                    <h4>Creative Problem Solver</h4>
+                    <p>I thrive on turning complex challenges into intuitive, user-friendly solutions that make a real impact.</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Full-Stack Mindset</h4>
+                    <p>From front-end aesthetics to back-end functionality, I understand how all pieces work together seamlessly.</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Brand-Focused Developer</h4>
+                    <p>I don't just write code—I craft digital experiences that align with brand identity and business goals.</p>
+                </div>
+                <div class="highlight-item">
+                    <h4>Continuous Learner</h4>
+                    <p>The tech world evolves rapidly, and I'm always exploring new technologies and best practices to stay ahead.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== EXPERIENCE TIMELINE SECTION ===== -->
+    <section class="experience-section" id="experience">
+      <h2 class="experience-title"><span class="typing">Work Experience</span></h2>
+      <div class="timeline-container">
+        <div class="timeline">
+          <div class="timeline-tracker" id="timeline-dot"></div>
+
+          <!-- 1 -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>Front-End Web Developer</h3>
+              <h4>Erickson Senior Living</h4>
+              <span class="timeline-date">2023 – 2025</span>
+              <p>Built landing pages and dynamic homepages using WordPress, Drupal, Bootstrap, and custom JavaScript. Created Salesforce Marketing Cloud journeys and AMPscript templates, increasing email engagement by 40%.</p>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>Lead Process Manager</h3>
+              <h4>Amwins Group</h4>
+              <span class="timeline-date">2020 – 2023</span>
+              <p>Coordinated process improvements, documented workflows, and collaborated with stakeholders across departments to enhance efficiency and communication.</p>
+            </div>
+          </div>
+
+          <!-- 3 -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>HTML/CSS Moodle Developer</h3>
+              <h4>Johns Hopkins University</h4>
+              <span class="timeline-date">2019 – 2020</span>
+              <p>Used HTML/CSS and JavaScript to transfer course content into Moodle LMS, increasing student engagement by 25% with responsive, accessible layouts.</p>
+            </div>
+          </div>
+
+          <!-- 4 -->
+          <div class="timeline-item right">
+            <div class="timeline-content">
+              <h3>Lead Web Developer</h3>
+              <h4>Capital Technology LLC</h4>
+              <span class="timeline-date">2017 – 2021</span>
+              <p>Developed custom WordPress themes with e-commerce, APIs, and dashboards. Oversaw full-stack development from kickoff through maintenance.</p>
+            </div>
+          </div>
+
+          <!-- 5 -->
+          <div class="timeline-item left">
+            <div class="timeline-content">
+              <h3>Web Developer & Brand Strategist</h3>
+              <h4>Tell Our Vision Publishing</h4>
+              <span class="timeline-date">2016 – 2021</span>
+              <p>Designed websites, e-commerce platforms, and branding systems for creatives. Built email campaigns and landing pages to support marketing goals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- ===== SKILLS SECTION ===== -->
+    <section class="skills-section" id="skills">
+        <div class="skills-wrapper">
+            <h2 class="experience-title"><span class="typing">Technical Expertise</span></h2>
+            <p class="skills-description">
                 Proficient in building responsive UIs, managing CMS platforms, creating AMPscript-powered emails,
                 and optimizing cloud-hosted assets. Continuously learning and applying best practices across
                 modern web ecosystems.
             </p>
-<div class="skills-grid">
-<div class="skill">
-<label>HTML5</label>
-<div class="skill-bar"><div class="fill" data-width="95%"></div></div>
-<p class="skill-detail">Built and maintained responsive landing pages using semantic HTML for accessibility and SEO performance.</p>
-</div>
-<div class="skill">
-<label>CSS3</label>
-<div class="skill-bar"><div class="fill" data-width="90%"></div></div>
-<p class="skill-detail">Crafted clean, mobile-first UI layouts using Flexbox, Grid, and custom animations for seamless UX across devices.</p>
-</div>
-<div class="skill">
-<label>JavaScript</label>
-<div class="skill-bar"><div class="fill" data-width="85%"></div></div>
-<p class="skill-detail">Developed dynamic site behavior and interactions including modals, sliders, and API integrations using vanilla JS.</p>
-</div>
-<div class="skill">
-<label>React</label>
-<div class="skill-bar"><div class="fill" data-width="75%"></div></div>
-<p class="skill-detail">Built component-based UIs, managing state and props for scalable frontend applications with React.</p>
-</div>
-<div class="skill">
-<label>WordPress / Drupal</label>
-<div class="skill-bar"><div class="fill" data-width="90%"></div></div>
-<p class="skill-detail">Created custom themes and templates with PHP and integrated content workflows for marketing teams.</p>
-</div>
-<div class="skill">
-<label>Salesforce Marketing Cloud (SFMC)</label>
-<div class="skill-bar"><div class="fill" data-width="85%"></div></div>
-<p class="skill-detail">Built personalized email journeys using AMPscript, HTML, and data extensions inside SFMC Email Studio.</p>
-</div>
-<div class="skill">
-<label>AMPscript</label>
-<div class="skill-bar"><div class="fill" data-width="80%"></div></div>
-<p class="skill-detail">Coded dynamic, data-driven email templates in SFMC, leveraging AMPscript logic for user-specific content.</p>
-</div>
-<div class="skill">
-<label>AWS (S3)</label>
-<div class="skill-bar"><div class="fill" data-width="70%"></div></div>
-<p class="skill-detail">Managed and optimized hosted assets on Amazon S3 for web projects with performance and legal compliance in mind.</p>
-</div>
-</div>
-</div>
-</section>
-<!DOCTYPE html>
+            <div class="skills-grid">
+                <div class="skill">
+                    <label>HTML5</label>
+                    <div class="skill-bar"><div class="fill" data-width="95%"></div></div>
+                    <p class="skill-detail">Built and maintained responsive landing pages using semantic HTML for accessibility and SEO performance.</p>
+                </div>
+                <div class="skill">
+                    <label>CSS3</label>
+                    <div class="skill-bar"><div class="fill" data-width="90%"></div></div>
+                    <p class="skill-detail">Crafted clean, mobile-first UI layouts using Flexbox, Grid, and custom animations for seamless UX across devices.</p>
+                </div>
+                <div class="skill">
+                    <label>JavaScript</label>
+                    <div class="skill-bar"><div class="fill" data-width="85%"></div></div>
+                    <p class="skill-detail">Developed dynamic site behavior and interactions including modals, sliders, and API integrations using vanilla JS.</p>
+                </div>
+                <div class="skill">
+                    <label>React</label>
+                    <div class="skill-bar"><div class="fill" data-width="75%"></div></div>
+                    <p class="skill-detail">Built component-based UIs, managing state and props for scalable frontend applications with React.</p>
+                </div>
+                <div class="skill">
+                    <label>WordPress / Drupal</label>
+                    <div class="skill-bar"><div class="fill" data-width="90%"></div></div>
+                    <p class="skill-detail">Created custom themes and templates with PHP and integrated content workflows for marketing teams.</p>
+                </div>
+                <div class="skill">
+                    <label>Salesforce Marketing Cloud (SFMC)</label>
+                    <div class="skill-bar"><div class="fill" data-width="85%"></div></div>
+                    <p class="skill-detail">Built personalized email journeys using AMPscript, HTML, and data extensions inside SFMC Email Studio.</p>
+                </div>
+                <div class="skill">
+                    <label>AMPscript</label>
+                    <div class="skill-bar"><div class="fill" data-width="80%"></div></div>
+                    <p class="skill-detail">Coded dynamic, data-driven email templates in SFMC, leveraging AMPscript logic for user-specific content.</p>
+                </div>
+                <div class="skill">
+                    <label>AWS (S3)</label>
+                    <div class="skill-bar"><div class="fill" data-width="70%"></div></div>
+                    <p class="skill-detail">Managed and optimized hosted assets on Amazon S3 for web projects with performance and legal compliance in mind.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<html lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Certifications with Modal</title>
-<style>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Certifications with Modal</title>
+        <style>
             .certifications-section {
                 background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
                 padding: 80px 20px;
@@ -1178,7 +1180,17 @@
             text-align: center;
           }
 
+          .skills-title {
+            text-align: center !important;
+            display: block;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
           
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;}
         }
 
             .certs-container {
@@ -1317,8 +1329,29 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+.skills-title {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 60px;
+  display: inline-block;
+  position: relative;
+  animation: pulseUnderline 1.2s infinite alternate;
+  text-align: center;
+  width: 100%;
+}
+
+.skills-title span.typing {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #6f42c1;
+}
+
 @media screen and (max-width: 768px) {
-  
+  .skills-title {
+    text-align: center;
+  }
 }
 .skills-description {
   text-align: center;
@@ -1378,7 +1411,11 @@
   .skills-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media screen and (max-width: 768px) {
-  
+  .skills-title { text-align: center; display: block; width: 100%; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;}
   .skills-grid { grid-template-columns: 1fr; }
 }
 
@@ -1414,6 +1451,19 @@
 }
 
 
+.skills-title {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.skills-title span.typing {
+  display: inline-block;
+  position: relative;
+}
+
 .skills-title span.typing::after {
   content: "";
   position: absolute;
@@ -1423,97 +1473,50 @@
   height: 3px;
   background: #6f42c1;
 }
-.skills-title,
-.certifications-section 
-
-.skills-title::after,
-.certifications-section .skills-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 3px;
-  width: 100%;
-  background: #6f42c1;
-}
-.skills-title,
-.certifications-section 
-
-.skills-title::after,
-.certifications-section .skills-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 3px;
-  width: 100%;
-  background: #6f42c1;
-}
-.skills-title,
-.certifications-section .skills-title {
-  font-size: 2.5rem;
-  color: #6f42c1;
-  font-family: 'Pacifico', cursive;
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.skills-title span,
-.certifications-section .skills-title span {
-  display: inline-block;
-  position: relative;
-}
-
-.skills-title span::after,
-.certifications-section .skills-title span::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #6f42c1;
-}
 </style>
-</head>
-<body>
-<!-- ===== CERTIFICATIONS SECTION ===== -->
-<section class="certifications-section" id="certifications">
-<h2 class="skills-title"><span class="typing">Certifications</span></h2>
-<div class="certs-container">
-<div class="cert-card" onclick="openModal('modal1')">
-<img alt="AEM Masterclass" src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Jasmine-Parker-Udemy-AEM-Masterclass-Certification.jpg"/>
-</div>
-<div class="cert-card" onclick="openModal('modal2')">
-<img alt="Hubspot SEO Cert" src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert.png"/>
-</div>
-<div class="cert-card" onclick="openModal('modal3')">
-<img alt="Hubspot SEO II Cert" src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert-II.png"/>
-</div>
-</div>
-</section>
-<!-- Modal 1 - AEM Masterclass -->
-<div class="modal" id="modal1">
-<div class="modal-content">
-<button class="close-btn" onclick="closeModal('modal1')">×</button>
-<img alt="AEM Masterclass Certificate" src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Jasmine-Parker-Udemy-AEM-Masterclass-Certification.jpg"/>
-</div>
-</div>
-<!-- Modal 2 - Hubspot SEO -->
-<div class="modal" id="modal2">
-<div class="modal-content">
-<button class="close-btn" onclick="closeModal('modal2')">×</button>
-<img alt="Hubspot SEO Certificate" src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert.png"/>
-</div>
-</div>
-<!-- Modal 3 - Hubspot SEO II -->
-<div class="modal" id="modal3">
-<div class="modal-content">
-<button class="close-btn" onclick="closeModal('modal3')">×</button>
-<img alt="Hubspot SEO II Certificate" src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert-II.png"/>
-</div>
-</div>
-<script>
+    </head>
+    <body>
+        <!-- ===== CERTIFICATIONS SECTION ===== -->
+        <section class="certifications-section" id="certifications">
+            <h2 class="experience-title"><span class="typing">Certifications</span></h2>
+            <div class="certs-container">
+                <div class="cert-card" onclick="openModal('modal1')">
+                    <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Jasmine-Parker-Udemy-AEM-Masterclass-Certification.jpg" alt="AEM Masterclass">
+                </div>
+                <div class="cert-card" onclick="openModal('modal2')">
+                    <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert.png" alt="Hubspot SEO Cert">
+                </div>
+                <div class="cert-card" onclick="openModal('modal3')">
+                    <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert-II.png" alt="Hubspot SEO II Cert">
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal 1 - AEM Masterclass -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal('modal1')">&times;</button>
+                <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Jasmine-Parker-Udemy-AEM-Masterclass-Certification.jpg" alt="AEM Masterclass Certificate">
+            </div>
+        </div>
+
+        <!-- Modal 2 - Hubspot SEO -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal('modal2')">&times;</button>
+                <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert.png" alt="Hubspot SEO Certificate">
+            </div>
+        </div>
+
+        <!-- Modal 3 - Hubspot SEO II -->
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal('modal3')">&times;</button>
+                <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert-II.png" alt="Hubspot SEO II Certificate">
+            </div>
+        </div>
+
+        <script>
             function openModal(modalId) {
                 const modal = document.getElementById(modalId);
                 modal.classList.add('show');
@@ -1546,6 +1549,7 @@
                 }
             });
         </script>
+    
 <script>
   const skillObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -1562,9 +1566,12 @@
     skillObserver.observe(skill);
   });
 </script>
+
 </body>
-</html>
-<style>
+    </html>
+
+
+    <style>
       .certs-container {
         display: flex;
         flex-wrap: wrap;
@@ -1611,8 +1618,29 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+.skills-title {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 60px;
+  display: inline-block;
+  position: relative;
+  animation: pulseUnderline 1.2s infinite alternate;
+  text-align: center;
+  width: 100%;
+}
+
+.skills-title span.typing {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #6f42c1;
+}
+
 @media screen and (max-width: 768px) {
-  
+  .skills-title {
+    text-align: center;
+  }
 }
 .skills-description {
   text-align: center;
@@ -1672,7 +1700,11 @@
   .skills-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media screen and (max-width: 768px) {
-  
+  .skills-title { text-align: center; display: block; width: 100%; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;}
   .skills-grid { grid-template-columns: 1fr; }
 }
 
@@ -1708,6 +1740,19 @@
 }
 
 
+.skills-title {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.skills-title span.typing {
+  display: inline-block;
+  position: relative;
+}
+
 .skills-title span.typing::after {
   content: "";
   position: absolute;
@@ -1717,75 +1762,32 @@
   height: 3px;
   background: #6f42c1;
 }
-.skills-title,
-.certifications-section 
-
-.skills-title::after,
-.certifications-section .skills-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 3px;
-  width: 100%;
-  background: #6f42c1;
-}
-.skills-title,
-.certifications-section 
-
-.skills-title::after,
-.certifications-section .skills-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 3px;
-  width: 100%;
-  background: #6f42c1;
-}
-.skills-title,
-.certifications-section .skills-title {
-  font-size: 2.5rem;
-  color: #6f42c1;
-  font-family: 'Pacifico', cursive;
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.skills-title span,
-.certifications-section .skills-title span {
-  display: inline-block;
-  position: relative;
-}
-
-.skills-title span::after,
-.certifications-section .skills-title span::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #6f42c1;
-}
 </style>
-<!-- ===== CONTACT SECTION ===== -->
-<section class="contact-section" id="contact">
-<h2 class="contact-title"><span class="typing">Let's Connect</span></h2>
-<p class="contact-subtext">Have a project or idea in mind? Drop your info below and let’s build something amazing together.</p>
-<form action="https://formspree.io/f/xdkzloja" class="contact-form" method="POST">
-<label for="name">Name</label>
-<input id="name" name="name" placeholder="Your Name" required="" type="text"/>
-<label for="email">Email</label>
-<input id="email" name="email" placeholder="you@example.com" required="" type="email"/>
-<label for="phone">Phone</label>
-<input id="phone" name="phone" placeholder="(123) 456-7890" type="tel"/>
-<label for="message">Message</label>
-<textarea id="message" name="message" placeholder="How can I help you?" required="" rows="5"></textarea>
-<button type="submit">Send Message</button>
-</form>
-</section>
-<style>
+
+    <!-- ===== CONTACT SECTION ===== -->
+    <section class="contact-section" id="contact">
+      <h2 class="contact-title"><span class="typing">Let's Connect</span></h2>
+      <p class="contact-subtext">Have a project or idea in mind? Drop your info below and let’s build something amazing together.</p>
+
+      <form class="contact-form" action="https://formspree.io/f/xdkzloja" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Your Name" required>
+
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" placeholder="you@example.com" required>
+
+        <label for="phone">Phone</label>
+        <input type="tel" name="phone" id="phone" placeholder="(123) 456-7890">
+
+        <label for="message">Message</label>
+        <textarea name="message" id="message" rows="5" placeholder="How can I help you?" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+
+
+    <style>
         .contact-section {
           background: linear-gradient(135deg, #f8f9ff 0%, #f0e7ff 100%);
           padding: 100px 20px;
@@ -2079,8 +2081,29 @@
           padding: 0 20px;
         }
 
-        @media screen and (max-width: 768px) {
-  
+        .skills-title {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 60px;
+  display: inline-block;
+  position: relative;
+  animation: pulseUnderline 1.2s infinite alternate;
+  text-align: center;
+  width: 100%;
+}
+
+.skills-title span.typing {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #6f42c1;
+}
+
+@media screen and (max-width: 768px) {
+  .skills-title {
+    text-align: center;
+  }
 }
 
         .skill {
@@ -2269,8 +2292,29 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+.skills-title {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 60px;
+  display: inline-block;
+  position: relative;
+  animation: pulseUnderline 1.2s infinite alternate;
+  text-align: center;
+  width: 100%;
+}
+
+.skills-title span.typing {
+  display: inline-block;
+  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 3px solid #6f42c1;
+}
+
 @media screen and (max-width: 768px) {
-  
+  .skills-title {
+    text-align: center;
+  }
 }
 .skills-description {
   text-align: center;
@@ -2330,7 +2374,11 @@
   .skills-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 }
 @media screen and (max-width: 768px) {
-  
+  .skills-title { text-align: center; display: block; width: 100%; 
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: fit-content;}
   .skills-grid { grid-template-columns: 1fr; }
 }
 
@@ -2366,6 +2414,19 @@
 }
 
 
+.skills-title {
+  font-size: 2.5rem;
+  color: #6f42c1;
+  font-family: 'Pacifico', cursive;
+  margin-bottom: 60px;
+  text-align: center;
+}
+
+.skills-title span.typing {
+  display: inline-block;
+  position: relative;
+}
+
 .skills-title span.typing::after {
   content: "";
   position: absolute;
@@ -2375,59 +2436,9 @@
   height: 3px;
   background: #6f42c1;
 }
-.skills-title,
-.certifications-section 
-
-.skills-title::after,
-.certifications-section .skills-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 3px;
-  width: 100%;
-  background: #6f42c1;
-}
-.skills-title,
-.certifications-section 
-
-.skills-title::after,
-.certifications-section .skills-title::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  height: 3px;
-  width: 100%;
-  background: #6f42c1;
-}
-.skills-title,
-.certifications-section .skills-title {
-  font-size: 2.5rem;
-  color: #6f42c1;
-  font-family: 'Pacifico', cursive;
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.skills-title span,
-.certifications-section .skills-title span {
-  display: inline-block;
-  position: relative;
-}
-
-.skills-title span::after,
-.certifications-section .skills-title span::after {
-  content: "";
-  position: absolute;
-  bottom: -10px;
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: #6f42c1;
-}
 </style>
-<script>
+
+    <script>
     window.addEventListener('scroll', () => {
       const timeline = document.querySelector('.timeline');
       const dot = document.getElementById('timeline-dot');
@@ -2438,7 +2449,9 @@
       dot.style.top = `${percent * timelineHeight}px`;
     });
     </script>
-<script>
+
+
+    <script>
         /* ===== TYPEWRITER EFFECT MAGIC ===== */
         const phrases = [
             "Creative Coder",
@@ -2510,7 +2523,7 @@
             });
         }
     </script>
-<script>
+    <script>
       // Animate skill bars when in view
       const skillObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
@@ -2529,25 +2542,28 @@
         skillObserver.observe(skill);
       });
     </script>
-<!-- ===== FOOTER SECTION ===== -->
-<footer class="site-footer">
-<div class="footer-flex">
-<a class="footer-link" href="mailto:jas.parker2025@gmail.com" target="_blank">
-<img alt="Email Icon" src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png">
+    <!-- ===== FOOTER SECTION ===== -->
+    <footer class="site-footer">
+      <div class="footer-flex">
+        <a href="mailto:jas.parker2025@gmail.com" class="footer-link" target="_blank">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/new-post.png" alt="Email Icon" />
           Email Me
-        </img></a>
-<span class="footer-divider">|</span>
-<a class="footer-link" href="tel:5627512732">
-<img alt="Phone Icon" src="https://img.icons8.com/ios-filled/20/ffffff/phone.png">
+        </a>
+        <span class="footer-divider">|</span>
+        <a href="tel:5627512732" class="footer-link">
+          <img src="https://img.icons8.com/ios-filled/20/ffffff/phone.png" alt="Phone Icon" />
           Let’s Chat
-        </img></a>
-<span class="footer-divider">|</span>
-<a class="footer-link" href="https://github.com/SHEWEBDEVELOPER" target="_blank">
-<img alt="GitHub Icon" src="https://img.icons8.com/ios-glyphs/20/ffffff/github.png">
+        </a>
+        <span class="footer-divider">|</span>
+        <a href="https://github.com/SHEWEBDEVELOPER" class="footer-link" target="_blank">
+          <img src="https://img.icons8.com/ios-glyphs/20/ffffff/github.png" alt="GitHub Icon" />
           GitHub
-        </img></a>
-</div>
-</footer>
+        </a>
+      </div>
+    </footer>
+
+
+
 <script>
   const skillObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
@@ -2564,5 +2580,6 @@
     skillObserver.observe(skill);
   });
 </script>
+
 </body>
 </html>
