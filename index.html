@@ -356,7 +356,7 @@
         }
 
         .project-links a {
-            color: #ffd700;
+            color: #ffffff;
             text-decoration: underline;
             font-size: 1rem;
             font-weight: 500;
@@ -773,8 +773,9 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#skills">Expertise</a></li>
+                <li><a href="#certifications"">Certifications</a></li>
                 <li><a href="#contact">Contact</a></li>
-                <li><a href="#resume" class="view-resume-btn" target="_blank" onclick="window.open('https://docs.google.com/document/d/1PVuf2utz1oP6ZlsNJ0O4DMaFG_JYheibp_RA12ee480/edit?tab=t.0#heading=h.o2yx03p46mac', '_blank')">View Resume</a></li>
+                <li><a href="#resume" class="view-resume-btn" target="_blank" onclick="window.open('https://drive.google.com/file/d/1eQ78t5NBs1c61zuicauk8FRLIS5PsZEO/view?usp=sharing')">View Resume</a></li>
             </ul>
         </nav>
 
@@ -840,21 +841,14 @@
         <!-- Project cards showcasing recent work -->
         <div class="projects-grid">
             <div class="project-card">
-                <h3>Reign Wellness</h3>
-                <p>A clean, responsive landing page designed to promote wellness services. Built with HTML, CSS, and deployed through GitHub Pages.</p>
+                <h3>GlowUp Nature Case Study</h3>
+                <p>Designed and developed a 5-part conditional welcome email journey for a wellness skincare brand. Executed full campaign strategy, copywriting, responsive email design, and a visual roadmap to showcase segmentation logic, user triggers, and engagement reactivation paths. Built using HTML/CSS and optimized for both desktop and mobile.
+
+</p>
                 <div class="project-links">
-                    <a href="https://shewebdeveloper.github.io/reignwellness/" target="_blank">Live Site</a>
+                    <a href="https://shewebdeveloper.github.io/GlowUp-Nature-Case-Study-v2/" target="_blank">Full Case Study</a>
                     <span style="color: white;">|</span>
-                    <a href="https://github.com/SHEWEBDEVELOPER/reignwellness" target="_blank">GitHub</a>
-                </div>
-            </div>
-            <div class="project-card">
-                <h3>Erickson Brunch & Tour</h3>
-                <p>A custom landing page built with Drupal and Bootstrap. Features a responsive promo slider and supports staging environment best practices.</p>
-                <div class="project-links">
-                    <a href="#" target="_blank">Live Site</a>
-                    <span style="color: white;">|</span>
-                    <a href="#" target="_blank">GitHub</a>
+                    <a href="https://github.com/SHEWEBDEVELOPER/GlowUp-Nature-Case-Study-v2" target="_blank">GitHub</a>
                 </div>
             </div>
         </div>
@@ -1017,6 +1011,265 @@
         </div>
       </div>
     </section>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Certifications with Modal</title>
+        <style>
+            .certifications-section {
+                background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+                padding: 80px 20px;
+                text-align: center;
+            }
+
+            .skills-title {
+                font-size: 2.5rem;
+                margin-bottom: 3rem;
+                color: #333;
+            }
+
+            .certs-container {
+                display: flex;
+                justify-content: center;
+                gap: 2rem;
+                flex-wrap: wrap;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+
+            .cert-card {
+                background: white;
+                border-radius: 10px;
+                padding: 1rem;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease, box-shadow 0.3s ease;
+                cursor: pointer;
+                max-width: 300px;
+            }
+
+            .cert-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+            }
+
+            .cert-card img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                transition: transform 0.3s ease;
+            }
+
+            .cert-card:hover img {
+                transform: scale(1.05);
+            }
+
+            /* Modal Styles */
+            .modal {
+                display: none;
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+                animation: fadeIn 0.3s ease;
+            }
+
+            .modal.show {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .modal-content {
+                position: relative;
+                max-width: 90%;
+                max-height: 90%;
+                animation: slideIn 0.3s ease;
+            }
+
+            .modal-content img {
+                width: 100%;
+                height: auto;
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            }
+
+            .close-btn {
+                position: absolute;
+                top: -15px;
+                right: -15px;
+                background: #ff4757;
+                color: white;
+                border: none;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                font-size: 1.5rem;
+                cursor: pointer;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                transition: all 0.3s ease;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            }
+
+            .close-btn:hover {
+                background: #ff3838;
+                transform: scale(1.1);
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+
+            @keyframes slideIn {
+                from { 
+                    opacity: 0;
+                    transform: scale(0.8);
+                }
+                to { 
+                    opacity: 1;
+                    transform: scale(1);
+                }
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .certs-container {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .cert-card {
+                    max-width: 280px;
+                }
+
+                .modal-content {
+                    max-width: 95%;
+                    max-height: 95%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- ===== CERTIFICATIONS SECTION ===== -->
+        <section class="certifications-section" id="certifications">
+            <h2 class="skills-title"><span class="typing">Certifications</span></h2>
+            <div class="certs-container">
+                <div class="cert-card" onclick="openModal('modal1')">
+                    <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Jasmine-Parker-Udemy-AEM-Masterclass-Certification.jpg" alt="AEM Masterclass">
+                </div>
+                <div class="cert-card" onclick="openModal('modal2')">
+                    <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert.png" alt="Hubspot SEO Cert">
+                </div>
+                <div class="cert-card" onclick="openModal('modal3')">
+                    <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert-II.png" alt="Hubspot SEO II Cert">
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal 1 - AEM Masterclass -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal('modal1')">&times;</button>
+                <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Jasmine-Parker-Udemy-AEM-Masterclass-Certification.jpg" alt="AEM Masterclass Certificate">
+            </div>
+        </div>
+
+        <!-- Modal 2 - Hubspot SEO -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal('modal2')">&times;</button>
+                <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert.png" alt="Hubspot SEO Certificate">
+            </div>
+        </div>
+
+        <!-- Modal 3 - Hubspot SEO II -->
+        <div id="modal3" class="modal">
+            <div class="modal-content">
+                <button class="close-btn" onclick="closeModal('modal3')">&times;</button>
+                <img src="http://jasminep70.sg-host.com/wp-content/uploads/2025/07/Hubspot-SEO-Cert-II.png" alt="Hubspot SEO II Certificate">
+            </div>
+        </div>
+
+        <script>
+            function openModal(modalId) {
+                const modal = document.getElementById(modalId);
+                modal.classList.add('show');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+            }
+
+            function closeModal(modalId) {
+                const modal = document.getElementById(modalId);
+                modal.classList.remove('show');
+                document.body.style.overflow = 'auto'; // Re-enable scrolling
+            }
+
+            // Close modal when clicking outside the image
+            document.addEventListener('click', function(event) {
+                if (event.target.classList.contains('modal')) {
+                    const modal = event.target;
+                    modal.classList.remove('show');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape') {
+                    const openModal = document.querySelector('.modal.show');
+                    if (openModal) {
+                        openModal.classList.remove('show');
+                        document.body.style.overflow = 'auto';
+                    }
+                }
+            });
+        </script>
+    </body>
+    </html>
+
+
+    <style>
+      .certs-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .cert-card {
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        overflow: hidden;
+        max-width: 300px;
+        width: 100%;
+        transition: transform 0.3s ease;
+      }
+
+      .cert-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .cert-card img {
+        width: 100%;
+        display: block;
+      }
+
+      @media screen and (max-width: 768px) {
+        .certs-container {
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    </style>
 
     <!-- ===== CONTACT SECTION ===== -->
     <section class="contact-section" id="contact">
